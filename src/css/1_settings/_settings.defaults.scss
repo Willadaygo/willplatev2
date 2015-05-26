@@ -1,0 +1,49 @@
+/*!
+ * willplate, by Will Russell
+ *
+ */
+///*------------------------------------*\
+//    #DEFAULTS
+//\*------------------------------------*/
+
+$padding: rem(30);
+
+/*  #Responsive breakpoints
+--------------------------------------*/
+
+// Min-width use
+$small-break:  em(480);
+$mid-break:    em(600);
+$med-break:    em(800);
+$nav-break:    em(900);
+$large-break:  em(1190);
+$larger-break: em(1250); //max width + padding for burger menu anchoring
+$max-break:    em(1800);
+
+// Max-width use
+$small-break-max: em(479);
+$med-break-max:   em(799);
+$nav-break-max:   em(899);
+$large-break-max: em(1189);
+
+
+
+// High-level base settings.
+$base-font-size:          rem(16) !default;
+$base-line-height:        rem(24) !default;
+$base-text-color:         #333 !default;
+$base-background-color:   #fff !default;
+
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$base-spacing-unit:           $base-line-height;
+$base-spacing-unit--tiny:     round($base-spacing-unit / 4);
+$base-spacing-unit--small:    round($base-spacing-unit / 2);
+$base-spacing-unit--large:    round($base-spacing-unit * 2);
+$base-spacing-unit--huge:     round($base-spacing-unit * 4);

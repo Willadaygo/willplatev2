@@ -1,0 +1,100 @@
+///*------------------------------------*\
+//    #MIXINS
+//\*------------------------------------*/
+
+/*  #Font face mixin
+--------------------------------------*/
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+ 
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+           font-url('#{$file-path}.woff')                format('woff'),
+           font-url('#{$file-path}.ttf')                 format('truetype'),
+           font-url('#{$file-path}.svg##{$font-family}') format('svg');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+           url('#{$file-path}.woff')                     format('woff'),
+           url('#{$file-path}.ttf')                      format('truetype'),
+           url('#{$file-path}.svg##{$font-family}')      format('svg');
+    }
+  }
+}
+
+/*  #Responsive breakpoints mixin
+--------------------------------------*/
+@mixin break($breakPoint) {
+  @media screen and (min-width: $breakPoint) {
+    @content;
+  }
+}
+
+@mixin break-max($breakPoint) {
+  @media screen and (max-width: $breakPoint) {
+    @content;
+  }
+}
+
+
+/*  #Size helper
+--------------------------------------*/
+
+@mixin size($width, $height: $width) { 
+  width: $width;
+  height: $height;
+}
+
+
+/*  #placeholder helper
+--------------------------------------*/
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+// Apply ‘attention’ styles in one go.
+@mixin attention($self: false) {
+
+    @if($self != false) {
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+
+    }
+
+    @else {
+
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+
+    }
+
+}
+
+// Generate Helvetica Neue’s numbered font-weights from their aliases.
+@mixin font-weight($font-weight) {
+
+    @if ($font-weight == "regular") {
+        font-weight: 300;
+    }
+
+    @if ($font-weight == "bold") {
+        font-weight: 600;
+    }
+
+}
