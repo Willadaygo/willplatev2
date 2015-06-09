@@ -10,6 +10,10 @@ $palette: (
   "black": black
 );
 
+//Colour function
+@function col($color) {
+  @return map-get($palette, $color);
+}
 
 
 
