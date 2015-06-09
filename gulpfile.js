@@ -5,7 +5,6 @@
 
 var gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
-	// sass = require('gulp-ruby-sass'),
 	rimraf = require('rimraf'),
 	browserSync = require('browser-sync'),
 	browserify 	= require('browserify'),
@@ -15,10 +14,11 @@ var gulp = require('gulp'),
 var dev = 'src/',
 	prod = 'public/',
 	paths = {
-		pages: dev + 'templates/**/*.twig',
+		pages: dev + 'templates/*.twig',
 		img: dev + 'img/**/*',
 		css: dev +'css/*.styl',
-		js: dev + 'js/*.js',
+		// js: dev + 'js/*.js',
+		js: [dev + 'js/scripts.js', dev + 'js/modules/*.js'],
 		vendors: dev + 'js/vendor/*.js',
 		fonts: dev + 'fonts/**/*'
 	};
@@ -115,21 +115,14 @@ gulp.task('scripts', function(){
 	return browserify('./src/js/scripts.js')
 		.bundle()
 		.pipe(source("scripts.js"))
-		//.pipe( $.streamify( $.uglify() ))
+		// .pipe( $.streamify( $.uglify() ))
 		.pipe(gulp.dest(prod + 'js'));
 });
-
-// gulp.task('scripts', function(){
-// 	return gulp.src(paths.js)
-// 		.pipe($.uglify())
-// 		.pipe(gulp.dest(theme + 'js'));
-// });
-
 
 gulp.task('vendors', function(){
 	return gulp.src(paths.vendors)
 		.pipe($.concat('vendors.js'))
-		.pipe($.uglify())
+		// .pipe($.uglify())
 		.pipe(gulp.dest(prod + 'js'));
 });
 
@@ -152,11 +145,16 @@ gulp.task('server', function(){
 // --------------------
 
 gulp.task('watch', function() {
-	gulp.watch(dev +'css/**', ['styles']).on('error', errorHandler);
+	gulp.watch(dev +'css/**', ['styles']);
 	gulp.watch(paths.js, ['scripts', 'jshint']).on('error', errorHandler);
 	gulp.watch(paths.vendors, ['vendors']).on('error', errorHandler);
 	gulp.watch(paths.img, ['images', 'sprites']).on('error', errorHandler);
-	gulp.watch([paths.pages, dev + 'templates/partials/**', dev + 'templates/modules/**'], ['templates']).on('error', errorHandler);
+	gulp.watch([
+		paths.pages, 
+		dev + 'templates/partials/**', 
+		dev + 'templates/patterns/**'], 
+		['templates']
+	).on('error', errorHandler);
 });
 
 gulp.task('default', ['sprites', 'fonts', 'styles', 'vendors', 'scripts', 'server', 'watch']);

@@ -1,0 +1,70 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+a {
+  color: $color-links;
+  @include attention(all) {
+    text-decoration: none;
+  }
+}
+
+$underline-colour: col("blue");
+$underline-position : 92%;
+$underline-thickness: 2px;
+
+.underline {
+  color: inherit;
+  /**
+  * Layers multple text-shadows on top of 
+  * each other steching outwards horizontally.
+  **/
+  text-shadow: // 
+    0 em(-.5) col("white"), //top
+    0 em(.5) col("white"), //bottom
+    em(.5) 0 col("white"), //right
+    em(-.5) 0 col("white"), //left
+    em(1) 0 col("white"), //right
+    em(-1) 0 col("white"), //left
+    em(1.5) 0 col("white"), //right
+    em(-1.5) 0 col("white"), //left
+    em(2) 0 col("white"), //right
+    em(-2) 0 col("white"); //left
+  background-color: transparent;
+  background-image:
+    linear-gradient($underline-colour, $underline-colour), //tiny additional underline left
+    linear-gradient($underline-colour, $underline-colour), //tiny additional underline right
+    linear-gradient($underline-colour, $underline-colour); //main underline
+  /**
+  * Use ems instead of pixel if you want 
+  * the underline height to be responsive 
+  * to font-size.
+  **/
+  background-size:
+    em(.8) $underline-thickness, //tiny additional underline left
+    em(.8) $underline-thickness, //tiny additional underline right
+    $underline-thickness $underline-thickness; //main underline
+  background-repeat: 
+    no-repeat, //tiny additional underline left
+    no-repeat, //tiny additional underline right
+    repeat-x; //main underline
+  background-position: 
+    0% $underline-position, //tiny additional underline left
+    100% $underline-position, //tiny additional underline right
+    0% $underline-position; //main underline
+}
+
+.link-secret {
+  color: inherit;
+  @include attention() {
+    color: $color-links;
+    text-decoration: none;
+  }
+
+}
+
+::selection { // on select remove text-shadow!
+  text-shadow: none;
+  background: col("blue");
+  color: #fff; 
+}

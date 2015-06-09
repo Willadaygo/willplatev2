@@ -5,14 +5,14 @@
 /**
  * #TOOLS & #SETTINGS
  */
-@import "2_tools/tools.functions";
+@import "01-tools/tools.functions";
 
-@import "1_settings/settings.defaults";
-@import "1_settings/settings.global";
-@import "1_settings/settings.colors";
-@import "1_settings/settings.responsive";
+@import "00-settings/settings.defaults";
+@import "00-settings/settings.global";
+@import "00-settings/settings.colors";
+@import "00-settings/settings.responsive";
 
-@import "2_tools/tools.mixins";
+@import "01-tools/tools.mixins";
 
 
 
@@ -21,10 +21,10 @@
 /**
  * #GENERIC
  */
-@import "3_generic/generic.normalize";
-@import "3_generic//generic.reset";
-@import "3_generic//generic.box-sizing";
-@import "3_generic//generic.shared";
+@import "02-generic/generic.normalize";
+@import "02-generic//generic.reset";
+@import "02-generic//generic.box-sizing";
+@import "02-generic//generic.shared";
 
 
 
@@ -33,13 +33,13 @@
 /**
  * #BASE
  */
-@import "4_base/base.page";
+@import "03-base/base.page";
 // @import "bower_components/inuit-headings/base.headings";
-@import "4_base/base.type";
-@import "4_base/base.links";
+@import "03-base/base.type";
+@import "03-base/base.links";
 // @import "bower_components/inuit-lists/base.lists";
 // @import "bower_components/inuit-images/base.images";
-@import "4_base/base.quotes";
+@import "03-base/base.quotes";
 
 
 
@@ -48,8 +48,8 @@
 /**
  * #OBJECTS
  */
-@import "5_objects/objects.wrappers";
-@import "5_objects/objects.buttons";
+@import "04-objects/objects.wrappers";
+@import "04-objects/objects.buttons";
 // @import "bower_components/inuit-layout/objects.layout";
 // @import "bower_components/inuit-box/objects.box";
 // @import "bower_components/inuit-media/objects.media";
@@ -88,7 +88,7 @@
 /**
  * #TRUMPS
  */
-// @import "8_trumps/trumps.clearfix";
-@import "8_trumps/trumps.widths-responsive";
-@import "8_trumps/trumps.show-hide";
-@import "8_trumps/trumps.helpers";
+// @import "07-trumps/trumps.clearfix";
+@import "07-trumps/trumps.widths-responsive";
+@import "07-trumps/trumps.show-hide";
+@import "07-trumps/trumps.helpers";
