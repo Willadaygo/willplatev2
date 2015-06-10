@@ -4,7 +4,7 @@
 
 // Colour variables
 $palette: (
-  "blue": #301db3,
+  "blue": #0014B4,
   "white": white,
   "grey": #b2b2b2,
   "black": black
@@ -29,6 +29,7 @@ $base-text-color:         col("blue");
 // Links
 $color-links:           col("blue");
 $color-links-carousel:  col("black");
+$color-links-underline: col("grey");
 
 
 

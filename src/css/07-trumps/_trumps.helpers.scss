@@ -2,6 +2,9 @@
 //     #HELPERS
 // \*------------------------------------*/
 
+// .l__#{...} are for LAYOUT specific helpers
+// .t__#{...} are for TEXT specific helpers
+
 @each $profile, $color in $palette {
   .l__#{$profile} { background-color: $color !important; }
   .l__#{$profile}--hover:hover { background-color: $color !important; }
@@ -10,3 +13,31 @@
   .f__#{$profile} svg { fill: $color !important; }
   .f__#{$profile}--hover:hover svg { fill: $color !important; }
 }
+
+.t__align-center {
+  text-align: center;
+}
+
+.l__center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l__clear {
+  clear: both;
+}
+
+.l__cf {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// .l__margin-top {
+//   margin-top: $padding;
+// }

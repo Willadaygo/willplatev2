@@ -9,7 +9,7 @@ a {
   }
 }
 
-$underline-colour: col("blue");
+// $underline-colour: col("grey");
 $underline-position : 92%;
 $underline-thickness: 2px;
 
@@ -20,21 +20,21 @@ $underline-thickness: 2px;
   * each other steching outwards horizontally.
   **/
   text-shadow: // 
-    0 em(-.5) col("white"), //top
-    0 em(.5) col("white"), //bottom
-    em(.5) 0 col("white"), //right
-    em(-.5) 0 col("white"), //left
-    em(1) 0 col("white"), //right
-    em(-1) 0 col("white"), //left
-    em(1.5) 0 col("white"), //right
-    em(-1.5) 0 col("white"), //left
-    em(2) 0 col("white"), //right
-    em(-2) 0 col("white"); //left
+    0 em(-.5) $base-background-color, //top
+    0 em(.5) $base-background-color, //bottom
+    em(.5) 0 $base-background-color, //right
+    em(-.5) 0 $base-background-color, //left
+    em(1) 0 $base-background-color, //right
+    em(-1) 0 $base-background-color, //left
+    em(1.5) 0 $base-background-color, //right
+    em(-1.5) 0 $base-background-color, //left
+    em(2) 0 $base-background-color, //right
+    em(-2) 0 $base-background-color; //left
   background-color: transparent;
   background-image:
-    linear-gradient($underline-colour, $underline-colour), //tiny additional underline left
-    linear-gradient($underline-colour, $underline-colour), //tiny additional underline right
-    linear-gradient($underline-colour, $underline-colour); //main underline
+    linear-gradient($color-links-underline, $color-links-underline), //tiny additional underline left
+    linear-gradient($color-links-underline, $color-links-underline), //tiny additional underline right
+    linear-gradient($color-links-underline, $color-links-underline); //main underline
   /**
   * Use ems instead of pixel if you want 
   * the underline height to be responsive 
@@ -60,7 +60,6 @@ $underline-thickness: 2px;
     color: $color-links;
     text-decoration: none;
   }
-
 }
 
 ::selection { // on select remove text-shadow!
