@@ -3,8 +3,8 @@
 // \*------------------------------------*/
 
 .styleguide {
-  * {
-    text-align: center;
+  hr {
+    border: rem(1) solid col("black");
   }
 }
 
@@ -16,18 +16,17 @@
 
 .palette__item {
   display: inline-block;
-  @include size( rem(200) );
-  border-radius: 50%;
   margin: 0 2%;
-  &--border {
-    border: rem(1) solid col("grey");
-  }
+  
 }
 
 .palette__circle {
   display: block;
-  @include size( rem(200) );
+  @include size( rem(150) );
   border-radius: 50%;
+  &--border {
+    border: rem(1) solid col("grey");
+  }
 }
 
 .palette__title {

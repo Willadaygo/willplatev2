@@ -4,14 +4,14 @@
 
 a {
   color: $color-links;
-  @include attention(all) {
+  @include attention(hover) {
+    color: $color-links-hover;
     text-decoration: none;
   }
 }
 
-// $underline-colour: col("grey");
-$underline-position : 92%;
-$underline-thickness: 2px;
+$underline-position : 90%;
+$underline-thickness: .05em;
 
 .underline {
   color: inherit;
@@ -20,16 +20,16 @@ $underline-thickness: 2px;
   * each other steching outwards horizontally.
   **/
   text-shadow: // 
-    0 em(-.5) $base-background-color, //top
-    0 em(.5) $base-background-color, //bottom
-    em(.5) 0 $base-background-color, //right
-    em(-.5) 0 $base-background-color, //left
-    em(1) 0 $base-background-color, //right
-    em(-1) 0 $base-background-color, //left
-    em(1.5) 0 $base-background-color, //right
+    0 em(-.5) $base-background-color,  //top
+    0 em(.5) $base-background-color,   //bottom
+    em(.5) 0 $base-background-color,   //right
+    em(-.5) 0 $base-background-color,  //left
+    em(1) 0 $base-background-color,    //right
+    em(-1) 0 $base-background-color,   //left
+    em(1.5) 0 $base-background-color,  //right
     em(-1.5) 0 $base-background-color, //left
-    em(2) 0 $base-background-color, //right
-    em(-2) 0 $base-background-color; //left
+    em(2) 0 $base-background-color,    //right
+    em(-2) 0 $base-background-color;   //left
   background-color: transparent;
   background-image:
     linear-gradient($color-links-underline, $color-links-underline), //tiny additional underline left
@@ -47,11 +47,16 @@ $underline-thickness: 2px;
   background-repeat: 
     no-repeat, //tiny additional underline left
     no-repeat, //tiny additional underline right
-    repeat-x; //main underline
+    repeat-x;  //main underline
   background-position: 
-    0% $underline-position, //tiny additional underline left
+    0% $underline-position,   //tiny additional underline left
     100% $underline-position, //tiny additional underline right
-    0% $underline-position; //main underline
+    0% $underline-position;   //main underline
+
+  .lt-ie9 & {
+    background-image: none;
+    text-decoration: underline;
+  }
 }
 
 .link-secret {

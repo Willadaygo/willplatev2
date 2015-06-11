@@ -5,55 +5,28 @@
 // /**
 //  * Some simple, crude, starting-point widths to use alongside the layout system.
 //  */
-// @include media-query(palm) {
 
-//     .palm-one-whole         { width: 100%; }
+// @include break($small-break) {
 
-//     .palm-one-half          { width: 50%; }
+//   .small-one-whole         { width: 100%; }
 
-//     .palm-one-third         { width: 33.333333333%; }
-//     .palm-two-thirds        { width: 66.666666666%; }
+//   .small-one-half          { width: 50%; }
 
-//     .palm-one-quarter       { width: 25%; }
-//     .palm-three-quarters    { width: 75%; }
+//   .small-one-third         { width: 33.333333333%; }
+//   .small-two-thirds        { width: 66.666666666%; }
 
-//     .palm-one-fifth         { width: 20%; }
-//     .palm-two-fifths        { width: 40%; }
-//     .palm-three-fifths      { width: 60%; }
-//     .palm-four-fifths       { width: 80%; }
+//   .small-one-quarter       { width: 25%; }
+//   .small-three-quarters    { width: 75%; }
 
-//     .palm-one-tenth         { width: 10%; }
-//     .palm-three-tenths      { width: 30%; }
-//     .palm-seven-tenths      { width: 70%; }
-//     .palm-nine-tenths       { width: 90%; }
+//   .small-one-fifth         { width: 20%; }
+//   .small-two-fifths        { width: 40%; }
+//   .small-three-fifths      { width: 60%; }
+//   .small-four-fifths       { width: 80%; }
 
-// }
-
-
-
-
-
-// @include media-query(lap) {
-
-//     .lap-one-whole          { width: 100%; }
-
-//     .lap-one-half           { width: 50%; }
-
-//     .lap-one-third          { width: 33.333333333%; }
-//     .lap-two-thirds         { width: 66.666666666%; }
-
-//     .lap-one-quarter        { width: 25%; }
-//     .lap-three-quarters     { width: 75%; }
-
-//     .lap-one-fifth          { width: 20%; }
-//     .lap-two-fifths         { width: 40%; }
-//     .lap-three-fifths       { width: 60%; }
-//     .lap-four-fifths        { width: 80%; }
-
-//     .lap-one-tenth          { width: 10%; }
-//     .lap-three-tenths       { width: 30%; }
-//     .lap-seven-tenths       { width: 70%; }
-//     .lap-nine-tenths        { width: 90%; }
+//   .small-one-tenth         { width: 10%; }
+//   .small-three-tenths      { width: 30%; }
+//   .small-seven-tenths      { width: 70%; }
+//   .small-nine-tenths       { width: 90%; }
 
 // }
 
@@ -61,55 +34,27 @@
 
 
 
-// @include media-query(lap-and-up) {
+// @include break($med-break) {
 
-//     .lap-and-up-one-whole       { width: 100%; }
+//   .med-one-whole          { width: 100%; }
 
-//     .lap-and-up-one-half        { width: 50%; }
+//   .med-one-half           { width: 50%; }
 
-//     .lap-and-up-one-third       { width: 33.333333333%; }
-//     .lap-and-up-two-thirds      { width: 66.666666666%; }
+//   .med-one-third          { width: 33.333333333%; }
+//   .med-two-thirds         { width: 66.666666666%; }
 
-//     .lap-and-up-one-quarter     { width: 25%; }
-//     .lap-and-up-three-quarters  { width: 75%; }
+//   .med-one-quarter        { width: 25%; }
+//   .med-three-quarters     { width: 75%; }
 
-//     .lap-and-up-one-fifth       { width: 20%; }
-//     .lap-and-up-two-fifths      { width: 40%; }
-//     .lap-and-up-three-fifths    { width: 60%; }
-//     .lap-and-up-four-fifths     { width: 80%; }
+//   .med-one-fifth          { width: 20%; }
+//   .med-two-fifths         { width: 40%; }
+//   .med-three-fifths       { width: 60%; }
+//   .med-four-fifths        { width: 80%; }
 
-//     .lap-and-up-one-tenth       { width: 10%; }
-//     .lap-and-up-three-tenths    { width: 30%; }
-//     .lap-and-up-seven-tenths    { width: 70%; }
-//     .lap-and-up-nine-tenths     { width: 90%; }
-
-// }
-
-
-
-
-
-// @include media-query(portable) {
-
-//     .portable-one-whole         { width: 100%; }
-
-//     .portable-one-half          { width: 50%; }
-
-//     .portable-one-third         { width: 33.333333333%; }
-//     .portable-two-thirds        { width: 66.666666666%; }
-
-//     .portable-one-quarter       { width: 25%; }
-//     .portable-three-quarters    { width: 75%; }
-
-//     .portable-one-fifth         { width: 20%; }
-//     .portable-two-fifths        { width: 40%; }
-//     .portable-three-fifths      { width: 60%; }
-//     .portable-four-fifths       { width: 80%; }
-
-//     .portable-one-tenth         { width: 10%; }
-//     .portable-three-tenths      { width: 30%; }
-//     .portable-seven-tenths      { width: 70%; }
-//     .portable-nine-tenths       { width: 90%; }
+//   .med-one-tenth          { width: 10%; }
+//   .med-three-tenths       { width: 30%; }
+//   .med-seven-tenths       { width: 70%; }
+//   .med-nine-tenths        { width: 90%; }
 
 // }
 
@@ -117,29 +62,33 @@
 
 
 
-// @include media-query(desk) {
+// @include break($large-break) {
 
-//     .desk-one-whole         { width: 100%; }
+//   .large-one-whole         { width: 100%; }
 
-//     .desk-one-half          { width: 50%; }
+//   .large-one-half          { width: 50%; }
 
-//     .desk-one-third         { width: 33.333333333%; }
-//     .desk-two-thirds        { width: 66.666666666%; }
+//   .large-one-third         { width: 33.333333333%; }
+//   .large-two-thirds        { width: 66.666666666%; }
 
-//     .desk-one-quarter       { width: 25%; }
-//     .desk-three-quarters    { width: 75%; }
+//   .large-one-quarter       { width: 25%; }
+//   .large-three-quarters    { width: 75%; }
 
-//     .desk-one-fifth         { width: 20%; }
-//     .desk-two-fifths        { width: 40%; }
-//     .desk-three-fifths      { width: 60%; }
-//     .desk-four-fifths       { width: 80%; }
+//   .large-one-fifth         { width: 20%; }
+//   .large-two-fifths        { width: 40%; }
+//   .large-three-fifths      { width: 60%; }
+//   .large-four-fifths       { width: 80%; }
 
-//     .desk-one-tenth         { width: 10%; }
-//     .desk-three-tenths      { width: 30%; }
-//     .desk-seven-tenths      { width: 70%; }
-//     .desk-nine-tenths       { width: 90%; }
+//   .large-one-tenth         { width: 10%; }
+//   .large-three-tenths      { width: 30%; }
+//   .large-seven-tenths      { width: 70%; }
+//   .large-nine-tenths       { width: 90%; }
 
-//     .desk-push-one-tenth    { position: relative; left: 10%; }
+//   .large-push-one-tenth    { position: relative; left: 10%; }
 
 // }
+
+
+
+
 

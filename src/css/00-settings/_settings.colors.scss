@@ -18,18 +18,20 @@ $palette: (
 
 
 
+
 // Page
 $base-background-color:   col("white");
-$base-text-color:         col("blue");
+$base-text-color:         col("black");
 
 
 
 
 
 // Links
-$color-links:           col("blue");
+$color-links:           col("black");
+$color-links-hover:     col("blue");
 $color-links-carousel:  col("black");
-$color-links-underline: col("grey");
+$color-links-underline: col("black");
 
 
 

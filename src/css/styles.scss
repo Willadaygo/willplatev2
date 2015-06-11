@@ -22,9 +22,9 @@
  * #GENERIC
  */
 @import "02-generic/generic.normalize";
-@import "02-generic//generic.reset";
-@import "02-generic//generic.box-sizing";
-@import "02-generic//generic.shared";
+@import "02-generic/generic.reset";
+@import "02-generic/generic.box-sizing";
+@import "02-generic/generic.shared";
 
 
 
@@ -40,6 +40,7 @@
 // @import "bower_components/inuit-lists/base.lists";
 // @import "bower_components/inuit-images/base.images";
 @import "03-base/base.quotes";
+@import "03-base/base.grid";
 
 
 

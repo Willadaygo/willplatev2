@@ -2,11 +2,18 @@
 //     #PAGE
 // \*------------------------------------*/
 
+@include font-face(FaktPro-Blond, "../fonts/FaktPro-Blond");
+@include font-face(FaktPro-Medium, "../fonts/FaktPro-Medium");
+
+$headings-font:  "leitura-news", "Helvetica", "Arial", sans-serif;
+$body-font:      "FaktPro-Blond", "aktiv-grotesk-std", sans-serif;
+$body-font-bold: "FaktPro-Medium", "aktiv-grotesk-std", sans-serif;
+
 html {
-    // font-size: ($inuit-base-font-size / 16px) * 1em; 
-    // line-height: $inuit-base-line-height / $inuit-base-font-size;
-    // background-color: $inuit-base-background-color;
-    // color: $inuit-base-text-color;
+    font-size: ($base-font-size / rem(16)) * 1em;
+    line-height: $base-line-height / $base-font-size;
+    background-color: $base-background-color;
+    color: $base-text-color;
     overflow-y: scroll; 
     min-height: 100%; 
     -webkit-text-size-adjust: 100%;
@@ -14,4 +21,9 @@ html {
     -moz-osx-font-smoothing: grayscale; 
      -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: $body-font;
+    font-weight: 400;
 }

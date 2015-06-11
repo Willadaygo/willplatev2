@@ -1,192 +1,150 @@
-// /*------------------------------------*\
-//     #TYPE
-// \*------------------------------------*/
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
 
-/*  #Headings
---------------------------------------*/
+//Combine the layout items with the widths found in `trumps.widths`.
 
-h1,.t__alpha, h2, .t__beta, h3, .t__gamma, h4, .t__delta, h5, .t__epsilon, h6, .t__zeta, .t__giga, .t__omega {
-  // font-family: $headings-font;
-  font-weight: normal;
-}
+$gutter: $base-spacing-unit;
 
-h1,.t__alpha {
-  font-size: rem(40);
-  letter-spacing: 0.01em;
-  line-height: rem(55);
+.grid {
+  list-style: none;
+  margin: $gutter 0 0 -#{$gutter};
+  padding: 0;
+  text-align: left;
+  font-size: 0; // inline-block mystery margin hack
+  // &:first-child {
+  //   margin-top:0;
+  //   [class*="col--"]:first-of-type {
+  //     margin-top:0;
+  //   }
+  // }
 
-  @include break($med-break) {
-    font-size: rem(60);
-    line-height: rem(78);
+  @include break($small-break) {
+    &:first-child {
+      [class*="col--"] {
+        margin-top:0;
+      }
+    }
+    margin-top: 0;
+    &.grid--noMargins {
+      margin: $gutter 0 0 0;
+    }
   }
 }
 
-h2,.t__beta {
-  font-size: rem(30);
-  line-height: rem(42);
+[class*="col--"] {
+  display: inline-block;
+  margin-top: $gutter;
+  padding-left: $gutter;
+  vertical-align: top;
+  width: 100%;
+  font-size: medium; //IE
+  font-size: initial;
+  text-align: left;
+  // min-height: $gutter;
+  img {
+    width: 100%;
+  }
+  .grid--noMargins > & {
+    margin-top: 0;
+  }
+  @include break($small-break) {
+    .grid--noMargins > & {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col--#{$i} {
+    @include break($small-break) {
+      width: #{((100%/12)*$i)};
+    }
+  }
+}
+
+.grid-columns {
+  @extend .l__cf;
+  width: 100%;
+  margin-top: $padding;
+}
+
+.columns {
+  display: block;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  min-height: $gutter;
+  background: col("white");
+  width: 100%;
+  @include break($small-break) {
+    width: 50%
+  }
   @include break($med-break) {
-    font-size: rem(40);
-    line-height: rem(54);
+    width: 33.333333%
   }
   @include break($large-break) {
-    font-size: rem(48);
-    line-height: rem(60);
+    width: 25%
   }
 }
 
-h3,.t__gamma {
-  font-size: rem(26);
-  line-height: rem(38);
-  letter-spacing: 0.01em;
+// Grid Modifiers
 
-  @include break($large-break) {
-    font-size: rem(30);
-    line-height: rem(42);
+.grid--full {
+  margin-left: 0;
+  // margin-top: 0;
+
+  > [class*="col--"] {
+    // margin-top: 0;
+    padding-left: 0;
   }
+
 }
 
-h4,.t__delta {
-  
+.grid--rev {
+  direction:rtl;
+  text-align: left;
+
+  > [class*="col--"] {
+    direction:ltr;
+    text-align: left;
+  }
+
 }
 
-// /**
-//  * Typographical base selectors.
-//  */
+.grid--middle {
 
-// /**
-//  * Headings 1–6.
-//  */
-// @include headings() {
-//     @include font-weight(regular);
-//     color: $color-headings;
-// }
+  > [class*="col--"] {
+    vertical-align: middle;
+  }
 
+}
 
+.grid--bottom {
 
+  > [class*="col--"] {
+    vertical-align: bottom;
+  }
 
+}
 
-// /**
-//  * A generic heading style which can be applied to any headings.
-//  */
-// .heading {
-//     @include font-size(22px);
-// }
+.grid--right {
+  text-align: right;
 
-// .heading-sub {
-//     @include font-size(16px);
-//     @include font-weight(bold);
-//     margin-bottom: 0;
-//     color: $color-heading-sub;
-// }
+  > [class*="col--"] {
+    text-align: left;
+  }
 
+}
 
+.grid--center {
+  text-align: center;
 
+  > [class*="col--"] {
+    text-align: left;
+  }
 
-
-// /**
-//  * Emboldened elements.
-//  */
-// a,
-// strong, b,
-// dt {
-//     @include font-weight(bold);
-// }
+}
 
 
-
-
-
-// /**
-//  * Code-like elements.
-//  */
-// code, kbd, samp {
-//     color: $color-code;
-//     font-family: Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-// }
-
-// pre {
-//     white-space: pre;
-//     word-wrap: normal;
-//     overflow: auto;
-//     padding: $spacing-unit--small;
-//     background-color: $color-pre-background;
-//     border-radius: $base-round;
-
-//     &,
-//     code, kbd, samp {
-//         color: $color-pre;
-//     }
-
-// }
-
-
-
-
-
-// /**
-//  * Figures.
-//  *
-//  * 1. Outdent figures by an arbitrary amount at the relevant viewport size.
-//  * 2. Reindent figcaptions.
-//  */
-// figure {
-
-//     @media screen and (min-width: 1380px) {
-//         margin-left: -128px; /* [1] */
-//     }
-
-//     > img {
-//         border-radius: $base-round;
-//     }
-
-// }
-
-//     figcaption {
-//         @include font-size(12px);
-
-//         @media screen and (min-width: 1380px) {
-//             margin-left: 128px; /* [2] */
-//         }
-
-//     }
-
-
-
-
-
-// /**
-//  * Horizontal rules.
-//  */
-// hr {
-//     border: none;
-//     border-bottom: 1px solid $color-gray-ui;
-//     margin-bottom: $spacing-unit - 1px;
-// }
-
-
-
-
-
-// /**
-//  * Highlighted text.
-//  */
-// mark {
-
-//     pre & {
-//         background: none;
-//         border-bottom: 1px solid;
-//         color: inherit;
-//     }
-
-// }
-
-
-
-
-
-// /**
-//  * Text-alignment.
-//  */
-// .text-banner {
-//     text-align: center;
-// }

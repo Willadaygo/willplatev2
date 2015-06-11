@@ -2,7 +2,7 @@
     #FUNCTIONS
 \*------------------------------------*/
 
-//Unit function
+//Unit functions
 @function rem($size) { 
   $remSize: $size / 16;
   @return $remSize * 1rem;

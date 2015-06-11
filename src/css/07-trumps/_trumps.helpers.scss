@@ -38,6 +38,42 @@
   }
 }
 
-// .l__margin-top {
-//   margin-top: $padding;
-// }
+.l__padding {
+  padding: $base-spacing-unit;
+}
+
+.h__small-up {
+  @include break($small-break) {
+    display: none!important;
+  }
+}
+
+.h__med-up {
+  @include break($med-break) {
+    display: none!important;
+  }
+}
+
+.h__large-up {
+  @include break($large-break) {
+    display: none;
+  }
+}
+
+.h__small-down {
+  @include break-max($small-break) { 
+    display: none!important;
+  }
+}
+
+.h__med-down {
+  @include break-max($med-break) { 
+    display: none!important;
+  }
+}
+
+.h__large-down {
+  @include break-max($large-break) { 
+    display: none;
+  }
+}

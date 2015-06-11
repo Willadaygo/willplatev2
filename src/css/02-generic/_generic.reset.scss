@@ -18,7 +18,9 @@ hr {
   padding: 0;
 }
 
-
+ul, ol {
+  padding-left: $base-spacing-unit;
+}
 
 
 

@@ -5,9 +5,15 @@
 /*  #Headings
 --------------------------------------*/
 
-h1,.t__alpha, h2, .t__beta, h3, .t__gamma, h4, .t__delta, h5, .t__epsilon, h6, .t__zeta, .t__giga, .t__omega {
-  // font-family: $headings-font;
-  font-weight: normal;
+h1,.t__alpha, 
+// h2, .t__beta,
+h3, .t__gamma, 
+h4, .t__delta, 
+h5, .t__epsilon, 
+h6, .t__zeta, 
+.t__giga {
+  font-family: $headings-font;
+  font-weight: 400;
 }
 
 h1,.t__alpha {
@@ -24,6 +30,8 @@ h1,.t__alpha {
 h2,.t__beta {
   font-size: rem(30);
   line-height: rem(42);
+  letter-spacing: 0.02em;
+  color: col("blue");
   @include break($med-break) {
     font-size: rem(40);
     line-height: rem(54);
@@ -47,6 +55,16 @@ h3,.t__gamma {
 
 h4,.t__delta {
   
+}
+
+.t__giga {
+  font-size: rem(60);
+  line-height: rem(78);
+}
+
+strong, b, em, dt {
+  font-family: $body-font-bold;
+  font-weight: normal;
 }
 
 // /**

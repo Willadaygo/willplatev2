@@ -8,32 +8,15 @@
 
 $padding: rem(30);
 
-/*  #Responsive breakpoints
---------------------------------------*/
 
-// Min-width use
-$small-break:  em(480);
-$mid-break:    em(600);
-$med-break:    em(800);
-$nav-break:    em(900);
-$large-break:  em(1190);
-$larger-break: em(1250); //max width + padding for burger menu anchoring
-$max-break:    em(1800);
-
-// Max-width use
-$small-break-max: em(479);
-$med-break-max:   em(799);
-$nav-break-max:   em(899);
-$large-break-max: em(1189);
 
 
 
 // High-level base settings.
 $base-font-size:          rem(16) !default;
 $base-line-height:        rem(24) !default;
-$base-text-color:         col("grey") !default;
+$base-text-color:         col("black") !default;
 $base-background-color:   col("white") !default;
-
 
 
 
