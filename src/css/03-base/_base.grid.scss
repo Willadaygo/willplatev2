@@ -64,19 +64,13 @@ $gutter: $base-spacing-unit;
   }
 }
 
-.grid-columns {
-  @extend .l__cf;
-  width: 100%;
-  margin-top: $padding;
-}
+// .grid-columns {
+//   @extend .l__cf;
+//   width: 100%;
+//   margin-top: $padding;
+// }
 
-.columns {
-  display: block;
-  position: relative;
-  float: left;
-  overflow: hidden;
-  min-height: $gutter;
-  background: col("white");
+.col--stack {
   width: 100%;
   @include break($small-break) {
     width: 50%
@@ -84,9 +78,9 @@ $gutter: $base-spacing-unit;
   @include break($med-break) {
     width: 33.333333%
   }
-  @include break($large-break) {
-    width: 25%
-  }
+  // @include break($large-break) {
+  //   width: 25%
+  // }
 }
 
 // Grid Modifiers

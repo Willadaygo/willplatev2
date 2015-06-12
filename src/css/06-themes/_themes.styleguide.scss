@@ -3,8 +3,21 @@
 // \*------------------------------------*/
 
 .styleguide {
+  margin-top: rem(80);
+  margin-bottom: rem(100);
   hr {
-    border: rem(1) solid col("black");
+    border-top: 1px solid col("black");
+  }
+  .sg-subheading {
+    margin-top: 0;
+    font-size: 30px;
+  }
+  .sg-title {
+    font-size: 18px;
+    line-height: 26px;
+    color: col("blue");
+    border-bottom: 1px solid col("grey");
+    margin-top: rem(100);
   }
 }
 

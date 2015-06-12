@@ -4,17 +4,42 @@
 
 a {
   color: $color-links;
+  text-decoration: none;
+  border-bottom: rem(1) solid col("black");
+  // transition: .15s ease;
   @include attention(hover) {
-    color: $color-links-hover;
-    text-decoration: none;
+    border-bottom: rem(3) solid col("blue");
+    // color: $color-links-hover;
+    // text-decoration: none;
   }
+  .t__lede & {
+    font-family: $body-font-bold;
+    font-size: rem(44);
+    letter-spacing: -0.01em;
+  }
+  //   text-decoration: none;
+  //   border-bottom: rem(1) solid col("black");
+  //   position: relative;
+  //   top: -.1em;
+  //   // transition: .15s ease;
+  //   span {
+  //     position: relative;
+  //     top: .1em;
+  //     // top: -0.1em;
+  //   }
+  //   &:hover {
+  //     text-decoration: none;
+  //     border-bottom: rem(4) solid col("blue");
+  //   }
+  // }
 }
 
-$underline-position : 90%;
-$underline-thickness: .05em;
+$underline-position : 88%;
+$underline-thickness: 1px;
 
-.underline {
-  color: inherit;
+// .underline {
+.t__lede a {
+  border:none !important;
   /**
   * Layers multple text-shadows on top of 
   * each other steching outwards horizontally.
@@ -25,7 +50,7 @@ $underline-thickness: .05em;
     em(.5) 0 $base-background-color,   //right
     em(-.5) 0 $base-background-color,  //left
     em(1) 0 $base-background-color,    //right
-    em(-1) 0 $base-background-color,   //left
+    em(-1) 0 $base-background-color,  //left
     em(1.5) 0 $base-background-color,  //right
     em(-1.5) 0 $base-background-color, //left
     em(2) 0 $base-background-color,    //right
@@ -52,10 +77,24 @@ $underline-thickness: .05em;
     0% $underline-position,   //tiny additional underline left
     100% $underline-position, //tiny additional underline right
     0% $underline-position;   //main underline
-
   .lt-ie9 & {
     background-image: none;
     text-decoration: underline;
+  }
+  &:hover {
+    border:none !important;
+    background-image:
+      linear-gradient($color-links-hover, $color-links-hover), //tiny additional hover left
+      linear-gradient($color-links-hover, $color-links-hover), //tiny additional hover right
+      linear-gradient($color-links-hover, $color-links-hover); //main underline
+    background-size:
+      em(.8) 4px, //tiny additional underline left
+      em(.8) 4px, //tiny additional underline right
+      4px 4px;
+    background-position: 
+      0% 94%,   //tiny additional underline left
+      100% 94%, //tiny additional underline right
+      0% 94%;   //main underline
   }
 }
 

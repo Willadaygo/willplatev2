@@ -3,15 +3,20 @@
 \*------------------------------------*/
 
 /**
- * #TOOLS & #SETTINGS
+ * #SETTINGS
  */
-@import "01-tools/tools.functions";
 
-@import "00-settings/settings.defaults";
+
 @import "00-settings/settings.global";
+@import "00-settings/settings.defaults";
 @import "00-settings/settings.colors";
 @import "00-settings/settings.responsive";
 
+
+/**
+ * #TOOLS
+ */
+@import "01-tools/tools.functions";
 @import "01-tools/tools.mixins";
 
 
@@ -34,11 +39,8 @@
  * #BASE
  */
 @import "03-base/base.page";
-// @import "bower_components/inuit-headings/base.headings";
 @import "03-base/base.type";
 @import "03-base/base.links";
-// @import "bower_components/inuit-lists/base.lists";
-// @import "bower_components/inuit-images/base.images";
 @import "03-base/base.quotes";
 @import "03-base/base.grid";
 
@@ -51,11 +53,6 @@
  */
 @import "04-objects/objects.wrappers";
 @import "04-objects/objects.buttons";
-// @import "bower_components/inuit-layout/objects.layout";
-// @import "bower_components/inuit-box/objects.box";
-// @import "bower_components/inuit-media/objects.media";
-// @import "bower_components/inuit-flag/objects.flag";
-// @import "bower_components/inuit-list-ui/objects.list-ui";
 
 
 
@@ -64,23 +61,6 @@
 /**
  * #COMPONENTS
  */
-// @import "components.page-head";
-// @import "components.bands";
-// @import "components.promo";
-// @import "components.page-foot";
-// @import "components.page-micro";
-// @import "components.site-nav";
-// @import "components.buttons";
-// @import "components.boxes";
-// @import "components.post";
-// @import "components.pull-quote";
-// @import "components.carousel";
-// @import "components.iconic";
-// @import "components.sprites";
-// @import "components.feature-list";
-// @import "components.annotate";
-// @import "components.ads";
-// @import "components.client-list";
 
 
 
@@ -97,7 +77,6 @@
 /**
  * #TRUMPS
  */
-// @import "07-trumps/trumps.clearfix";
 @import "07-trumps/trumps.widths-responsive";
 @import "07-trumps/trumps.show-hide";
 @import "07-trumps/trumps.helpers";

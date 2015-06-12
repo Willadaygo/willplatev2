@@ -2,13 +2,3 @@
     #FUNCTIONS
 \*------------------------------------*/
 
-//Unit functions
-@function rem($size) { 
-  $remSize: $size / 16;
-  @return $remSize * 1rem;
-}
-
-@function em($size) { 
-  $emSize: $size / 16;
-  @return $emSize * 1em;
-}

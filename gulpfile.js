@@ -111,6 +111,13 @@ gulp.task('jshint', function () {
     .pipe($.jshint.reporter('fail'));
 });
 
+gulp.task('vendors', function(){
+	return gulp.src(paths.vendors)
+		.pipe($.concat('vendors.js'))
+		// .pipe($.uglify())
+		.pipe(gulp.dest(prod + 'js'));
+});
+
 gulp.task('scripts', function(){
 	return browserify('./src/js/scripts.js')
 		.bundle()
@@ -119,12 +126,7 @@ gulp.task('scripts', function(){
 		.pipe(gulp.dest(prod + 'js'));
 });
 
-gulp.task('vendors', function(){
-	return gulp.src(paths.vendors)
-		.pipe($.concat('vendors.js'))
-		// .pipe($.uglify())
-		.pipe(gulp.dest(prod + 'js'));
-});
+
 
 
 

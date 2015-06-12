@@ -6,60 +6,42 @@
 --------------------------------------*/
 
 h1,.t__alpha, 
-// h2, .t__beta,
+h2, .t__beta,
 h3, .t__gamma, 
 h4, .t__delta, 
 h5, .t__epsilon, 
 h6, .t__zeta, 
-.t__giga {
+.t__lede {
   font-family: $headings-font;
   font-weight: 400;
 }
 
 h1,.t__alpha {
-  font-size: rem(40);
-  letter-spacing: 0.01em;
-  line-height: rem(55);
-
-  @include break($med-break) {
-    font-size: rem(60);
-    line-height: rem(78);
-  }
+  font-size: rem(36);
+  line-height: rem(48);
+  letter-spacing: -0.01em;
 }
 
 h2,.t__beta {
-  font-size: rem(30);
-  line-height: rem(42);
-  letter-spacing: 0.02em;
-  color: col("blue");
-  @include break($med-break) {
-    font-size: rem(40);
-    line-height: rem(54);
-  }
-  @include break($large-break) {
-    font-size: rem(48);
-    line-height: rem(60);
-  }
+  font-size: rem(22);
+  line-height: rem(28);
+  letter-spacing: -0.01em;
 }
 
-h3,.t__gamma {
-  font-size: rem(26);
-  line-height: rem(38);
-  letter-spacing: 0.01em;
+// h3,.t__gamma {
+//   font-size: rem(26);
+//   line-height: rem(38);
+//   letter-spacing: -0.01em;
+// }
 
-  @include break($large-break) {
-    font-size: rem(30);
-    line-height: rem(42);
-  }
-}
-
-h4,.t__delta {
+// h4,.t__delta {
   
-}
+// }
 
-.t__giga {
-  font-size: rem(60);
-  line-height: rem(78);
+.t__lede {
+  font-size: rem(46);
+  line-height: rem(56);
+  letter-spacing: -0.005em;
 }
 
 strong, b, em, dt {
