@@ -4,6 +4,7 @@
 
 a {
   color: inherit;
+  transition: $base-transition;
   @include attention(all) {
     text-decoration: none;
   }
@@ -13,41 +14,24 @@ p a {
   color: $color-links;
   text-decoration: none;
   border-bottom: rem(1) solid col("black");
-  // transition: .15s ease;
   @include attention(hover) {
     border-bottom: rem(3) solid col("blue");
-    // color: $color-links-hover;
-    // text-decoration: none;
   }
-  .t-lede & {
-    font-family: $body-font-bold;
-    font-size: rem(44);
-    letter-spacing: -0.01em;
-  }
-  //   text-decoration: none;
-  //   border-bottom: rem(1) solid col("black");
-  //   position: relative;
-  //   top: -.1em;
-  //   // transition: .15s ease;
-  //   span {
-  //     position: relative;
-  //     top: .1em;
-  //     // top: -0.1em;
-  //   }
-  //   &:hover {
-  //     text-decoration: none;
-  //     border-bottom: rem(4) solid col("blue");
-  //   }
-  // }
 }
 
 $underline-position : 88%;
-$underline-thickness: 1px;
+$underline-thickness: rem(1);
+
+$underline-position-h : 96%;
+$underline-thickness-h: rem(4);
 
 // .underline {
 .t-lede a {
   font-family: $body-font-bold;
+  font-size: rem(44);
+  letter-spacing: -0.01em;
   border:none !important;
+  transition: none;
   /**
   * Layers multple text-shadows on top of 
   * each other steching outwards horizontally.
@@ -55,6 +39,7 @@ $underline-thickness: 1px;
   text-shadow: // 
     0 em(-.5) $base-background-color,  //top
     0 em(.5) $base-background-color,   //bottom
+
     em(.5) 0 $base-background-color,   //right
     em(-.5) 0 $base-background-color,  //left
     em(1) 0 $base-background-color,    //right
@@ -96,13 +81,13 @@ $underline-thickness: 1px;
       linear-gradient($color-links-hover, $color-links-hover), //tiny additional hover right
       linear-gradient($color-links-hover, $color-links-hover); //main underline
     background-size:
-      em(.8) 4px, //tiny additional underline left
-      em(.8) 4px, //tiny additional underline right
-      4px 4px;
+      em(.8) $underline-thickness-h, //tiny additional underline left
+      em(.8) $underline-thickness-h, //tiny additional underline right
+      $underline-thickness-h rem(4);
     background-position: 
-      0% 94%,   //tiny additional underline left
-      100% 94%, //tiny additional underline right
-      0% 94%;   //main underline
+      0% $underline-position-h,   //tiny additional underline left
+      100% $underline-position-h, //tiny additional underline right
+      0% $underline-position-h;   //main underline
   }
 }
 

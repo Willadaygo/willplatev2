@@ -4,6 +4,8 @@
 
 // .l-#{...} are for LAYOUT specific helpers
 // .t-#{...} are for TEXT specific helpers
+// .h-#{...} are for HIDDEN specific helpers
+
 
 @each $profile, $color in $palette {
   .l-#{$profile} { background-color: $color !important; }
@@ -50,38 +52,3 @@
   margin-top: 0 !important;
 }
 
-.h-small-up {
-  @include break($small-break) {
-    display: none!important;
-  }
-}
-
-.h-med-up {
-  @include break($med-break) {
-    display: none!important;
-  }
-}
-
-.h-large-up {
-  @include break($large-break) {
-    display: none;
-  }
-}
-
-.h-small-down {
-  @include break-max($small-break) { 
-    display: none!important;
-  }
-}
-
-.h-med-down {
-  @include break-max($med-break) { 
-    display: none!important;
-  }
-}
-
-.h-large-down {
-  @include break-max($large-break) { 
-    display: none;
-  }
-}

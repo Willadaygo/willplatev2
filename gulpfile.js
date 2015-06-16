@@ -155,8 +155,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.img, ['images', 'sprites']).on('error', errorHandler);
 	gulp.watch([
 		paths.pages, 
-		dev + 'templates/partials/**', 
-		dev + 'templates/patterns/**'], 
+		dev + 'templates/**/*'], 
 		['templates']
 	).on('error', errorHandler);
 });

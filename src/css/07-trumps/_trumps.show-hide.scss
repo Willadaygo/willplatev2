@@ -1,6 +1,6 @@
-// /*------------------------------------*\
-//     #SHOW-HIDE
-// \*------------------------------------*/
+/*------------------------------------*\
+    #SHOW-HIDE
+\*------------------------------------*/
 
 // @mixin hide() {
 //     position: absolute !important;
@@ -10,24 +10,38 @@
 //     clip: rect(1px, 1px, 1px, 1px);
 // }
 
-// .hide { @include hide(); }
+.h-small-up {
+  @include break($small-break) {
+    display: none!important;
+  }
+}
 
-// @include media-query(palm) {
-//     .hide-palm { @include hide(); }
-// }
+.h-med-up {
+  @include break($med-break) {
+    display: none!important;
+  }
+}
 
-// @include media-query(lap) {
-//     .hide-lap { @include hide(); }
-// }
+.h-large-up {
+  @include break($large-break) {
+    display: none;
+  }
+}
 
-// @include media-query(lap-and-up) {
-//     .hide-lap-and-up { @include hide(); }
-// }
+.h-small-down {
+  @include break-max($small-break) { 
+    display: none!important;
+  }
+}
 
-// @include media-query(portable) {
-//     .hide-portable { @include hide(); }
-// }
+.h-med-down {
+  @include break-max($med-break) { 
+    display: none!important;
+  }
+}
 
-// @include media-query(desk) {
-//     .hide-desk { @include hide(); } 
-// }
+.h-large-down {
+  @include break-max($large-break) { 
+    display: none;
+  }
+}

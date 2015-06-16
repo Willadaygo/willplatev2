@@ -5,8 +5,8 @@
 
 // Define our variables
 
-$right-width:   rem(245) !default;
-$overlap-ratio: 1 !default;
+$right-width:   100% !default;
+$overlap-ratio: 2 !default;
 $speed: .2s;
 
 // Menu Button
@@ -16,7 +16,7 @@ $speed: .2s;
   // display: block;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   @include size(rem(80));
   background: $base-brand-color;
   z-index: 100;
@@ -24,7 +24,7 @@ $speed: .2s;
   transition: .2s ease;
   // will-change: transform;
   .ocn-show-right & {
-    // background: $base-text-color;
+    background: $base-text-color;
     // transform: translate3d(-$right-width,0,0);
   }
 }
@@ -57,19 +57,20 @@ $speed: .2s;
 }
 
 .ocn__list__item { //li
+  transition: $base-transition;
   @include break($med-break) {
     display: inline-block;
     padding: 0 $padding;
-  }
-  &.is--active {
-    background: $base-brand-color;
+    border-bottom: rem(1) solid col("black");
+    &.is--active {
+      border-bottom: rem(4) solid col("blue");
+    }
   }
 }
 
 .ocn__list a {
   display: block;
   width: 100%;
-  border-bottom: rem(1) solid col("black");
   padding: $padding;
   // @include break($med-break) {
   //   border: 0;
@@ -165,7 +166,7 @@ $speed: .2s;
 
   .site__inner,
   .ocn {
-    transition: $speed ease;
+    transition: $base-transition;
   }
 
   .ocn {
@@ -182,11 +183,9 @@ $speed: .2s;
       right:0;
       width:$right-width;
       transform: translate3d(100%,0,0);
-      // transform: translate3d(0,0,0);
     }
     .ocn__list {
-      transition: $speed ease;
-      // transform: translate3d(50%,0,0);
+      transition: $base-transition;
       transform: translate3d(0,0,0);
     }
   }
@@ -196,7 +195,6 @@ $speed: .2s;
 
       .site__inner {
         transform: translate3d(-#{$right-width / $overlap-ratio},0,0);
-        opacity: .5;
       }
 
       .ocn {
@@ -219,12 +217,11 @@ $speed: .2s;
 // Page loading
 
 .switch-trans {
-  // transition: opacity 1s;
-  transition: all .3s cubic-bezier(0.175, .885, .32, 1.275); //cheeky
+  transition: $base-transition; //cheeky
 
   &.switch-trans-in {
     opacity: 0;
-    transform: translate3d(0, rem(80), 0);
+    transform: translate3d(5%, 0, 0);
 
     &.switch-trans-out {
       opacity: 1;
