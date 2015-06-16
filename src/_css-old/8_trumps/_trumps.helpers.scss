@@ -3,10 +3,10 @@
 // \*------------------------------------*/
 
 @each $profile, $color in $palette {
-  .l__#{$profile} { background-color: $color !important; }
-  .l__#{$profile}--hover:hover { background-color: $color !important; }
-  .t__#{$profile} { color: $color !important; }
-  .t__#{$profile}--hover:hover { color: $color !important; }
-  .f__#{$profile} svg { fill: $color !important; }
-  .f__#{$profile}--hover:hover svg { fill: $color !important; }
+  .l-#{$profile} { background-color: $color !important; }
+  .l-#{$profile}--hover:hover { background-color: $color !important; }
+  .t-#{$profile} { color: $color !important; }
+  .t-#{$profile}--hover:hover { color: $color !important; }
+  .f-#{$profile} svg { fill: $color !important; }
+  .f-#{$profile}--hover:hover svg { fill: $color !important; }
 }

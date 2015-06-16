@@ -5,40 +5,40 @@
 /*  #Headings
 --------------------------------------*/
 
-h1,.t__alpha, 
-h2, .t__beta,
-h3, .t__gamma, 
-h4, .t__delta, 
-h5, .t__epsilon, 
-h6, .t__zeta, 
-.t__lede {
+h1, .t-alpha, 
+h2, .t-beta,
+h3, .t-gamma, 
+h4, .t-delta, 
+h5, .t-epsilon, 
+h6, .t-zeta, 
+.t-lede {
   font-family: $headings-font;
   font-weight: 400;
 }
 
-h1,.t__alpha {
+h1,.t-alpha {
   font-size: rem(36);
   line-height: rem(48);
   letter-spacing: -0.01em;
 }
 
-h2,.t__beta {
+h2,.t-beta {
   font-size: rem(22);
   line-height: rem(28);
   letter-spacing: -0.01em;
 }
 
-// h3,.t__gamma {
+// h3,.t-gamma {
 //   font-size: rem(26);
 //   line-height: rem(38);
 //   letter-spacing: -0.01em;
 // }
 
-// h4,.t__delta {
+// h4,.t-delta {
   
 // }
 
-.t__lede {
+.t-lede {
   font-size: rem(46);
   line-height: rem(56);
   letter-spacing: -0.005em;

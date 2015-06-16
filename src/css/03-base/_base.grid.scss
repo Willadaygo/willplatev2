@@ -4,7 +4,7 @@
 
 //Combine the layout items with the widths found in `trumps.widths`.
 
-$gutter: $base-spacing-unit;
+$gutter: 10px;
 
 .grid {
   list-style: none;
@@ -64,8 +64,16 @@ $gutter: $base-spacing-unit;
   }
 }
 
+@for $i from 1 through 12 {
+  .col--fix#{$i} {
+    @include break($small-break) {
+      width: #{((rem(1210)/12)*$i)};
+    }
+  }
+}
+
 // .grid-columns {
-//   @extend .l__cf;
+//   @extend .l-cf;
 //   width: 100%;
 //   margin-top: $padding;
 // }

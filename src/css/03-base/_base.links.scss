@@ -3,6 +3,13 @@
 \*------------------------------------*/
 
 a {
+  color: inherit;
+  @include attention(all) {
+    text-decoration: none;
+  }
+}
+
+p a {
   color: $color-links;
   text-decoration: none;
   border-bottom: rem(1) solid col("black");
@@ -12,7 +19,7 @@ a {
     // color: $color-links-hover;
     // text-decoration: none;
   }
-  .t__lede & {
+  .t-lede & {
     font-family: $body-font-bold;
     font-size: rem(44);
     letter-spacing: -0.01em;
@@ -38,7 +45,8 @@ $underline-position : 88%;
 $underline-thickness: 1px;
 
 // .underline {
-.t__lede a {
+.t-lede a {
+  font-family: $body-font-bold;
   border:none !important;
   /**
   * Layers multple text-shadows on top of 

@@ -10,7 +10,7 @@
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
-	<!--<script type="text/javascript">
+	{# <script type="text/javascript">
     (function() {
       var path = '//easy.myfonts.net/v2/js?sid=4892(font-family=Life+Regular)&sid=4893(font-family=Life+Bold)&sid=5004(font-family=Life+Rounded)&key=5iGR8u9930',
           protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
@@ -21,7 +21,7 @@
       var head = document.getElementsByTagName("head")[0];
       head.appendChild(trial);
     })();
-	</script> -->
+	</script> #}
 
 	<link rel="stylesheet" href="/css/styles.css">
 	<!--[if lt IE 9]> 
@@ -34,11 +34,48 @@
 	{% include "symbols.twig" %}
 	{% set svg = "svg.twig" %}
 
-	<div class="wrapper">
+  <div class="site">
 
-		{% block content %}{% endblock %}
+    <a href="/" class="ocn-switch"></a>
+    
+    <div class="ocn">
+      
+      <ul class="ocn__list">
+        <li class="ocn__list__item">
+          <a href="/">Home</a>
+          {# <ul class="ocn__sub">
+            <li><a href="">Sub Nav 1</a></li>
+          </ul> #}
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="/about/">About</a>
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="/contact/">Contact</a>
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="">Nav 4</a>
+        </li>
+      </ul>
 
-	</div>
+    </div>
+
+    
+    
+    <!-- the viewport area contains MAIN WEBSITE CONTENT -->
+    <div class="site__inner"> <!-- important for mob menu push -->
+
+      <div class="switch-container">
+        <div class="switch">
+
+          {% block content %}{% endblock %}
+
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
 	
 	<script src='/js/vendors.js'></script>
 	<script src="/js/scripts.js"></script>

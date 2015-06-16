@@ -1,43 +1,29 @@
 /*jslint node: true */
 'use strict';
 
-$(document).ready(function() {
+$(function() {
 
-  var example   = require('./modules/example').init()
+  var example   = require('./modules/example.js').init()
 
-  // #External links
-  $('a[data-external="true"]').on('click', function(e) {
+  $('.ocn').addClass('is--visible'); // Hide nav on load
+
+  $(".ocn-switch").on("click",function(e){
     e.preventDefault();
+    $(".site").toggleClass("ocn-show-right");
 
-    var href = $(this).attr('href'),
-        opener = window.open( href );
+    if ($(".site").hasClass("ocn-show-right")) {
+      $(".site__inner").append("<div class='overlay'></div>");
+      $(".overlay").on("click", function() {
+        $(".site").removeClass("ocn-show-right");
+        $(this).remove();
+      });
+    }
+
   });
-  // #End external links
 
-  // #Fastclick Mobile delay
-  // #Amended for IE //TG
-  // if (window.addEventListener) {
-  //  window.addEventListener('load', function() {
-  //   new FastClick(document.body);
-  //  }, false);
-  // }
-
-  // #LazyLoad for events & culture posts
-  if( $('.js--lazy').length > 0)
-  {
-    var offset = 0;
-    $('.js--lazy').lazyload({
-      load: function(el) {
-        setTimeout(function() {
-          $(el).addClass('is--loaded');
-        }, offset);
-        if(offset < 400) {
-          offset += 200;
-        } else {
-          offset = 0;
-        } 
-      }
-    });
-  }
+  $(".ocn__sub--toggle").on("click",function(){
+    $(this).toggleClass("is--rotated");
+    $(".ocn__sub").toggleClass("is--visible");
+  });
 
 });

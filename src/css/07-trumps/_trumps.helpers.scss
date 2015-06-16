@@ -2,32 +2,32 @@
 //     #HELPERS
 // \*------------------------------------*/
 
-// .l__#{...} are for LAYOUT specific helpers
-// .t__#{...} are for TEXT specific helpers
+// .l-#{...} are for LAYOUT specific helpers
+// .t-#{...} are for TEXT specific helpers
 
 @each $profile, $color in $palette {
-  .l__#{$profile} { background-color: $color !important; }
-  .l__#{$profile}--hover:hover { background-color: $color !important; }
-  .t__#{$profile} { color: $color !important; }
-  .t__#{$profile}--hover:hover { color: $color !important; }
-  .f__#{$profile} svg { fill: $color !important; }
-  .f__#{$profile}--hover:hover svg { fill: $color !important; }
+  .l-#{$profile} { background-color: $color !important; }
+  .l-#{$profile}--hover:hover { background-color: $color !important; }
+  .t-#{$profile} { color: $color !important; }
+  .t-#{$profile}--hover:hover { color: $color !important; }
+  .f-#{$profile} svg { fill: $color !important; }
+  .f-#{$profile}--hover:hover svg { fill: $color !important; }
 }
 
-.t__align-center {
+.t-align-center {
   text-align: center;
 }
 
-.l__center {
+.l-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.l__clear {
+.l-clear {
   clear: both;
 }
 
-.l__cf {
+.l-cf {
   *zoom: 1;
   &:before, &:after {
     content: " ";
@@ -38,49 +38,49 @@
   }
 }
 
-.l__padding {
+.l-padding {
   padding: $base-spacing-unit;
 }
 
-.l__margin-top {
+.l-margin-top {
   margin-top: $base-spacing-unit !important;
 }
 
-.l__margin-top--none {
+.l-margin-top--none {
   margin-top: 0 !important;
 }
 
-.h__small-up {
+.h-small-up {
   @include break($small-break) {
     display: none!important;
   }
 }
 
-.h__med-up {
+.h-med-up {
   @include break($med-break) {
     display: none!important;
   }
 }
 
-.h__large-up {
+.h-large-up {
   @include break($large-break) {
     display: none;
   }
 }
 
-.h__small-down {
+.h-small-down {
   @include break-max($small-break) { 
     display: none!important;
   }
 }
 
-.h__med-down {
+.h-med-down {
   @include break-max($med-break) { 
     display: none!important;
   }
 }
 
-.h__large-down {
+.h-large-down {
   @include break-max($large-break) { 
     display: none;
   }

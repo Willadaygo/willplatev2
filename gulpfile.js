@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 var dev = 'src/',
 	prod = 'public/',
 	paths = {
-		pages: dev + 'templates/*.twig',
+		pages: dev + 'templates/**/*.twig',
 		img: dev + 'img/**/*',
 		css: dev +'css/*.styl',
 		// js: dev + 'js/*.js',
@@ -106,7 +106,9 @@ gulp.task('clean', function () {
 
 gulp.task('jshint', function () {
    return gulp.src(paths.js)
-    .pipe($.jshint())
+    .pipe($.jshint({
+    	jquery: true
+    }))
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'));
 });
@@ -159,7 +161,7 @@ gulp.task('watch', function() {
 	).on('error', errorHandler);
 });
 
-gulp.task('default', ['sprites', 'fonts', 'styles', 'vendors', 'scripts', 'server', 'watch']);
+gulp.task('default', ['sprites', 'templates', 'fonts', 'styles', 'vendors', 'scripts', 'server', 'watch']);
 
 // Handle the error
 function errorHandler (error) {
