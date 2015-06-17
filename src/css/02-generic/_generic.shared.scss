@@ -16,8 +16,8 @@ fieldset, figure,
 pre,
 %margin-top,
 .l-margin-top {
-  margin-top: ($base-spacing-unit / $base-font-size) * 1rem;
-  // margin-top: $padding;
+  // margin-top: ($base-spacing-unit / $base-font-size) * 1rem;
+  margin-top: $base-spacing-unit;
 }
 
 

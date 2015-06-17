@@ -5,9 +5,6 @@
 .styleguide {
   margin-top: rem(80);
   margin-bottom: rem(100);
-  hr {
-    border-top: 1px solid col("black");
-  }
   .sg-subheading {
     margin-top: 0;
     font-size: 30px;
@@ -22,7 +19,7 @@
 }
 
 .palette {
-  margin: $padding 0 0;
+  margin: $base-spacing-unit 0 0;
   padding: 0;
   @extend .l-cf;
 }

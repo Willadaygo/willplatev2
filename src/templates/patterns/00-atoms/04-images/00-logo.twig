@@ -1,1 +1,6 @@
-<a href="#"><img src="/img/logo.png" class="logo" alt="Logo Alt Text" /></a>
+{# <a href="#"><img src="/img/logo.png" class="logo" alt="Logo Alt Text" /></a> #}
+{% set svg = "../../../partials/svg.twig" %}
+
+<div class="f-black  l-margin-top">
+  {% include svg with {'class': '', 'symbol': '#logo'} %}
+</div>

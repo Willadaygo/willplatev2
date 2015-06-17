@@ -1,20 +1,26 @@
-/*!
- * willplate, by Will Russell
- *
- */
- 
 /*------------------------------------*\
   #GLOBAL
 \*------------------------------------*/
 
-//Unit functions
-@function rem($size) { 
-  $remSize: $size / 16;
-  @return $remSize * 1rem;
-}
+$padding: rem(20);
 
-@function em($size) { 
-  $emSize: $size / 16;
-  @return $emSize * 1em;
-}
+$base-transition: 165ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+
+// High-level base settings.
+$base-font-size:          rem(16) !default;
+$base-line-height:        rem(24) !default;
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$base-spacing-unit:           rem(20);
+$base-spacing-unit--tiny:     $base-spacing-unit / 4;
+$base-spacing-unit--small:    $base-spacing-unit / 2;
+$base-spacing-unit--large:    $base-spacing-unit * 2;
+$base-spacing-unit--huge:     $base-spacing-unit * 4;
 

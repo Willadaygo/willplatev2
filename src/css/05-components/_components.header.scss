@@ -60,7 +60,7 @@ $speed: .2s;
   transition: $base-transition;
   @include break($med-break) {
     display: inline-block;
-    padding: 0 $padding;
+    padding: 0 $base-spacing-unit;
     border-bottom: rem(1) solid col("black");
     &.is--active {
       border-bottom: rem(4) solid col("blue");
@@ -71,7 +71,7 @@ $speed: .2s;
 .ocn__list a {
   display: block;
   width: 100%;
-  padding: $padding;
+  padding: $base-spacing-unit;
   // @include break($med-break) {
   //   border: 0;
   //   padding: 0;
@@ -221,7 +221,8 @@ $speed: .2s;
 
   &.switch-trans-in {
     opacity: 0;
-    transform: translate3d(5%, 0, 0);
+    // transform: translate3d(5%, 0, 0);
+    transform: translate3d(0, rem(40), 0);
 
     &.switch-trans-out {
       opacity: 1;

@@ -2,6 +2,8 @@
 
 {% extends "partials/layout.twig" %}
 
+{% set svg = "/partials/svg.twig" %}
+
 {% block meta_description %}blah blah{% endblock %}
 
 {% block content %}
@@ -25,42 +27,17 @@
   <h2 class="sg-title">Paragraph</h2>
   {% include "patterns/00-atoms/02-text/01-paragraph.twig" %}
 
-  <h2 class="sg-title">Blockquote</h2>
-  {% include "patterns/00-atoms/02-text/02-blockquote.twig" %}
-
   <h2 class="sg-title">Inline Elements</h2>
   {% include "patterns/00-atoms/02-text/03-inline-elements.twig" %}
-
-  <h2 class="sg-title">Time</h2>
-  {% include "patterns/00-atoms/02-text/04-time.twig" %}
-
-  <h2 class="sg-title">Reformatted Text</h2>
-  {% include "patterns/00-atoms/02-text/05-preformatted-text.twig" %}
-
-  <h2 class="sg-title">Unordered</h2>
-  {% include "patterns/00-atoms/03-lists/00-unordered.twig" %}
-
-  <h2 class="sg-title">Ordered</h2>
-  {% include "patterns/00-atoms/03-lists/01-ordered.twig" %}
-
-  <h2 class="sg-title">Definition</h2>
-  {% include "patterns/00-atoms/03-lists/02-definition.twig" %}
 
   <h2 class="sg-title">Intro Text</h2>
   {% include "patterns/01-molecules/00-text/04-intro-text.twig" %}
 
-  <h2 class="sg-title">Three Up</h2>
+  <h2 class="sg-title">Three Ups</h2>
   {% include "patterns/01-molecules/01-layout/02-three-up.twig" %}
 
-
-  {# <h1>Heading 1</h1>
-  <h1><a href="#" class="underline">Heading 1</a></h1>
-  <h2>Heading 2</h2>
-  <h2><a href="#" class="underline">Heading 2</a></h2>
-  <h3>Heading 3</h3>
-  <h3><a href="#" class="underline">Heading 3</a></h3> #}
-
-  
+  <h2 class="sg-title">Logo</h2>
+  {% include "patterns/00-atoms/04-images/00-logo.twig" %}
 
 </div>
 

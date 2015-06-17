@@ -4,10 +4,11 @@
 
 // Colour variables
 $palette: (
-  "blue":  #0014b4,
-  "white": white,
-  "grey":  #b2b2b2,
-  "black": black
+  "blue":         #0000cc,
+  "white":        white,
+  "grey":         #666666,
+  "grey--light":  #eeeeee,
+  "black":        black
 );
 
 //Colour function
@@ -22,7 +23,7 @@ $palette: (
 // Page
 $base-background-color:   col("white");
 $base-text-color:         col("black");
-$base-brand-color:         col("blue");
+$base-brand-color:        col("blue");
 
 
 
@@ -31,7 +32,6 @@ $base-brand-color:         col("blue");
 // Links
 $color-links:           col("black");
 $color-links-hover:     col("blue");
-$color-links-carousel:  col("black");
 $color-links-underline: col("black");
 
 

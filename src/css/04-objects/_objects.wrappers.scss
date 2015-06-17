@@ -5,13 +5,17 @@
 .wrapper {
   max-width: em(1280);
   margin: 0 auto;
-  padding-right: rem(20);
-  padding-left:  rem(20);
+  padding-right: $base-spacing-unit;
+  padding-left:  $base-spacing-unit;
 
   @include break($med-break) {
-    padding-right: rem(40);
-    padding-left:  rem(40);
+    padding-right: $base-spacing-unit--large;
+    padding-left:  $base-spacing-unit--large;
   }
+
+  // @include break($xlarge-break) {
+  //   max-width: em(1680);
+  // }
 
 }
 

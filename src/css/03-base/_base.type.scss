@@ -1,9 +1,10 @@
-// /*------------------------------------*\
-//     #TYPE
-// \*------------------------------------*/
+/*------------------------------------*\
+  #TYPE
+\*------------------------------------*/
 
-/*  #Headings
---------------------------------------*/
+/**
+ * Headings 1–6.
+ */
 
 h1, .t-alpha, 
 h2, .t-beta,
@@ -12,181 +13,101 @@ h4, .t-delta,
 h5, .t-epsilon, 
 h6, .t-zeta, 
 .t-lede {
-  font-family: $headings-font;
-  font-weight: 400;
+  font-family: $body-font-bold;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 h1,.t-alpha {
-  font-size: rem(36);
-  line-height: rem(48);
+  font-size: rem(23);
+  line-height: rem(30);
   letter-spacing: -0.01em;
+  @include break($med-break) {
+    font-size: rem(40);
+    line-height: rem(46);
+  }
 }
 
-h2,.t-beta {
-  font-size: rem(22);
-  line-height: rem(28);
+h2,.t-beta,
+h3, .t-gamma {
+  font-size: rem(17);
+  line-height: rem(25);
   letter-spacing: -0.01em;
+  @include break($med-break) {
+    font-size: rem(24);
+    line-height: rem(28);
+  }
 }
 
-// h3,.t-gamma {
-//   font-size: rem(26);
-//   line-height: rem(38);
-//   letter-spacing: -0.01em;
-// }
-
-// h4,.t-delta {
-  
-// }
+h3, .t-gamma {
+  font-family: $body-font;
+}
 
 .t-lede {
-  font-size: rem(46);
-  line-height: rem(56);
+  font-family: $headings-font;
+  font-size: rem(24);
+  line-height: rem(30);
   letter-spacing: -0.005em;
+  @include break($med-break) {
+    font-size: rem(47);
+    line-height: rem(60);
+  }
+  a {
+    font-family: $body-font-bold;
+    font-size: rem(25);
+    letter-spacing: -0.01em;
+    @include break($med-break) {
+      font-size: rem(48);
+    }
+  }
 }
 
+
+
+
+
+/**
+ * Paragraphs.
+ */
+p {
+  font-size: rem(14);
+  line-height: rem(20);
+  @include break($med-break) {
+    font-size: rem(17);
+    line-height: rem(24);
+  }
+}
+
+
+
+
+
+/**
+ * Emboldened elements.
+ */
 strong, b, em, dt {
   font-family: $body-font-bold;
   font-weight: normal;
 }
 
-// /**
-//  * Typographical base selectors.
-//  */
-
-// /**
-//  * Headings 1–6.
-//  */
-// @include headings() {
-//     @include font-weight(regular);
-//     color: $color-headings;
-// }
 
 
 
 
-
-// /**
-//  * A generic heading style which can be applied to any headings.
-//  */
-// .heading {
-//     @include font-size(22px);
-// }
-
-// .heading-sub {
-//     @include font-size(16px);
-//     @include font-weight(bold);
-//     margin-bottom: 0;
-//     color: $color-heading-sub;
-// }
+/**
+ * Horizontal rules.
+ */
+hr {
+  border: none;
+  border-top: rem(1) solid col("black");
+}
 
 
 
 
 
-// /**
-//  * Emboldened elements.
-//  */
-// a,
-// strong, b,
-// dt {
-//     @include font-weight(bold);
-// }
 
 
 
 
 
-// /**
-//  * Code-like elements.
-//  */
-// code, kbd, samp {
-//     color: $color-code;
-//     font-family: Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-// }
-
-// pre {
-//     white-space: pre;
-//     word-wrap: normal;
-//     overflow: auto;
-//     padding: $spacing-unit--small;
-//     background-color: $color-pre-background;
-//     border-radius: $base-round;
-
-//     &,
-//     code, kbd, samp {
-//         color: $color-pre;
-//     }
-
-// }
-
-
-
-
-
-// /**
-//  * Figures.
-//  *
-//  * 1. Outdent figures by an arbitrary amount at the relevant viewport size.
-//  * 2. Reindent figcaptions.
-//  */
-// figure {
-
-//     @media screen and (min-width: 1380px) {
-//         margin-left: -128px; /* [1] */
-//     }
-
-//     > img {
-//         border-radius: $base-round;
-//     }
-
-// }
-
-//     figcaption {
-//         @include font-size(12px);
-
-//         @media screen and (min-width: 1380px) {
-//             margin-left: 128px; /* [2] */
-//         }
-
-//     }
-
-
-
-
-
-// /**
-//  * Horizontal rules.
-//  */
-// hr {
-//     border: none;
-//     border-bottom: 1px solid $color-gray-ui;
-//     margin-bottom: $spacing-unit - 1px;
-// }
-
-
-
-
-
-// /**
-//  * Highlighted text.
-//  */
-// mark {
-
-//     pre & {
-//         background: none;
-//         border-bottom: 1px solid;
-//         color: inherit;
-//     }
-
-// }
-
-
-
-
-
-// /**
-//  * Text-alignment.
-//  */
-// .text-banner {
-//     text-align: center;
-// }

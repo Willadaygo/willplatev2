@@ -6,9 +6,8 @@
  * #SETTINGS
  */
 
-
+@import "00-settings/settings.global-functions";
 @import "00-settings/settings.global";
-@import "00-settings/settings.defaults";
 @import "00-settings/settings.colors";
 @import "00-settings/settings.responsive";
 
@@ -16,6 +15,7 @@
 /**
  * #TOOLS
  */
+
 @import "01-tools/tools.functions";
 @import "01-tools/tools.mixins";
 
@@ -26,6 +26,7 @@
 /**
  * #GENERIC
  */
+
 @import "02-generic/generic.normalize";
 @import "02-generic/generic.reset";
 @import "02-generic/generic.box-sizing";
@@ -38,6 +39,8 @@
 /**
  * #BASE
  */
+
+@import "03-base/base.font";
 @import "03-base/base.page";
 @import "03-base/base.type";
 @import "03-base/base.links";
@@ -51,6 +54,7 @@
 /**
  * #OBJECTS
  */
+
 @import "04-objects/objects.wrappers";
 @import "04-objects/objects.buttons";
 
@@ -61,6 +65,7 @@
 /**
  * #COMPONENTS
  */
+
 @import "05-components/components.header";
 
 
@@ -69,6 +74,7 @@
 /**
  * #THEMES
  */
+
 @import "06-themes/themes.styleguide";
 
 
@@ -77,6 +83,7 @@
 /**
  * #TRUMPS
  */
+
 @import "07-trumps/trumps.widths-responsive";
 @import "07-trumps/trumps.show-hide";
 @import "07-trumps/trumps.helpers";

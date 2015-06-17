@@ -1,31 +1,25 @@
-// /*------------------------------------*\
-//     #PAGE
-// \*------------------------------------*/
-
-@include font-face(Mercury-Text-G3-Roman, "../fonts/Mercury-Text-G3-Roman");
-@include font-face(FaktPro-Blond, "../fonts/FaktPro-Blond");
-@include font-face(FaktPro-Medium, "../fonts/FaktPro-Medium");
-
-
-$headings-font:  "Mercury-Text-G3-Roman", sans-serif;
-$body-font:      "FaktPro-Blond", "aktiv-grotesk-std", sans-serif;
-$body-font-bold: "FaktPro-Medium", "aktiv-grotesk-std", sans-serif;
+/*------------------------------------*\
+  #PAGE
+\*------------------------------------*/
 
 html {
-    font-size: ($base-font-size / rem(16)) * 1em;
-    line-height: $base-line-height / $base-font-size;
-    background-color: $base-background-color;
-    color: $base-text-color;
-    overflow-y: scroll; 
-    min-height: 100%; 
-    -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%; 
-    -moz-osx-font-smoothing: grayscale; 
-     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  // font-size: ($base-font-size / rem(10)) * 1em;
+  // line-height: $base-line-height / $base-font-size;
+  background-color: $base-background-color;
+  color: $base-text-color;
+  overflow-y: scroll; 
+  min-height: 100%; 
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%; 
+  -moz-osx-font-smoothing: grayscale; 
+   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  @include break($xlarge-break) {
+    font-size: 125%;
+  }
 }
 
 body {
-    font-family: $body-font;
-    font-weight: 400;
+  font-family: $body-font;
+  font-weight: 400;
 }

@@ -59,7 +59,8 @@ gulp.task('images', function () {
 		.pipe($.changed(prod + 'img'))
 		.pipe($.imagemin({
 			progressive: true,
-			interlaced: true
+			interlaced: true,
+			svgoPlugins: [{removeUselessStrokeAndFill: true}]
 		}))
 		.pipe(gulp.dest(prod + 'img'));
 });

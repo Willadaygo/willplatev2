@@ -4,7 +4,7 @@
 
 //Combine the layout items with the widths found in `trumps.widths`.
 
-$gutter: 10px;
+$gutter: rem(10);
 
 .grid {
   list-style: none;
@@ -67,6 +67,7 @@ $gutter: 10px;
 @for $i from 1 through 12 {
   .col--fix#{$i} {
     @include break($small-break) {
+      // width: #{((rem(1610)/12)*$i)};
       width: #{((rem(1210)/12)*$i)};
     }
   }
