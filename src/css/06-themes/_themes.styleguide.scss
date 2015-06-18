@@ -5,10 +5,12 @@
 .styleguide {
   margin-top: rem(80);
   margin-bottom: rem(100);
+
   .sg-subheading {
     margin-top: 0;
     font-size: 30px;
   }
+
   .sg-title {
     font-size: 18px;
     line-height: 26px;
@@ -16,6 +18,15 @@
     border-bottom: 1px solid col("grey");
     margin-top: rem(100);
   }
+
+  h1 + .sg-title {
+    margin-top: rem(20);
+  }
+
+  .sg-heading {
+    margin-top: rem(100);
+  }
+
 }
 
 .palette {

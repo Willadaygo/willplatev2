@@ -214,20 +214,3 @@ $speed: .2s;
 
 }
 
-// Page loading
-
-.switch-trans {
-  transition: $base-transition; //cheeky
-
-  &.switch-trans-in {
-    opacity: 0;
-    // transform: translate3d(5%, 0, 0);
-    transform: translate3d(0, rem(40), 0);
-
-    &.switch-trans-out {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);    
-    } 
-  }
-}
-

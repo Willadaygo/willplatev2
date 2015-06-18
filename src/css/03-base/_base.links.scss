@@ -35,7 +35,7 @@ $underline-thickness: rem(1);
 // $underline-thickness-hover--h2:   rem(2);
 // $underline-thickness-hover--lede: rem(4);
 
-$underline-thickness-hover--p:    em(1.35);
+$underline-thickness-hover--p:    em(1.9);
 $underline-thickness-hover--h2:   em(1.35);
 $underline-thickness-hover--lede: em(1.35);
 
@@ -46,20 +46,20 @@ $underline-thickness-hover--lede: em(1.35);
   * each other steching outwards horizontally.
   **/
   color: $color-links;
-  text-shadow: 
-    0 em(-.5)     $base-background-color,  //top
-    0 em(.5)      $base-background-color,   //bottom
+  // text-shadow: 
+  //   0 em(-.5)     $base-background-color,  //top
+  //   0 em(.5)      $base-background-color,   //bottom
 
-    em(-1) em(-1) $base-background-color,   //left - top 
+  //   em(-1) em(-1) $base-background-color,   //left - top 
 
-    em(.5) 0      $base-background-color,   //right
-    em(-.5) 0     $base-background-color,  //left
-    em(1) 0       $base-background-color,    //right
-    em(-1) 0      $base-background-color,  //left
-    em(1.5) 0     $base-background-color,  //right
-    em(-1.5) 0    $base-background-color; //left
-    // em(2) 0       $base-background-color,    //right
-    // em(-2) 0      $base-background-color;   //left
+  //   em(.5) 0      $base-background-color,   //right
+  //   em(-.5) 0     $base-background-color,  //left
+  //   em(1) 0       $base-background-color,    //right
+  //   em(-1) 0      $base-background-color,  //left
+  //   em(1.5) 0     $base-background-color,  //right
+  //   em(-1.5) 0    $base-background-color; //left
+  //   // em(2) 0       $base-background-color,    //right
+  //   // em(-2) 0      $base-background-color;   //left
   background-color: transparent;
   background-image:
     linear-gradient($color-links-underline, $color-links-underline), //tiny additional underline left

@@ -82,12 +82,15 @@
         <div class="switch">
 
           
-<div class="styleguide wrapper switch-trans">
-  <h1 class="sg-heading">Cotton Thompson Cole</h1>
-  <h2 class="sg-subheading">Style Guide</h2>
-  
-  <h2 class="sg-title">Colors</h2>
-  <ul class="palette">
+<div class="styleguide  wrapper">
+  <div class="switch-trans">
+    <h1 class="sg-heading">Cotton Thompson Cole</h1>
+    <h2 class="sg-subheading">Style Guide</h2>
+  </div>
+
+  <div class="switch-trans">
+    <h2 class="sg-title">Colors</h2>
+    <ul class="palette">
   <li class="palette__item">
     <span class="palette__circle  l-blue"></span>
     <span class="palette__title  l-margin-top  t-align-center"><b>Blue</b></span>
@@ -100,14 +103,18 @@
     <span class="palette__circle  palette__circle--border  l-white"></span>
     <span class="palette__title  l-margin-top  t-align-center"><b>White</b></span>
   </li>
-</ul>  
-  <h2 class="sg-title">Fonts</h2>
-  <p class="headings-font">Primary font: "Imperial", sans-serif;</p>
+</ul>  </div>
+  
+  <div class="switch-trans">
+    <h2 class="sg-title">Fonts</h2>
+    <p class="headings-font">Primary font: "Imperial", sans-serif;</p>
 
 <p>Secondary font: "FaktPro-Blond", sans-serif;</p>
-<p><strong>Secondary font bold: "FaktPro-Medium", sans-serif;</strong></p>
-  <h2 class="sg-title">Visibility</h2>
-  <p class="h-small-down">This text is hidden below 480px</p>
+<p><strong>Secondary font bold: "FaktPro-Medium", sans-serif;</strong></p>  </div>
+
+  <div class="switch-trans">  
+    <h2 class="sg-title">Visibility</h2>
+    <p class="h-small-down">This text is hidden below 480px</p>
 
 <p class="h-small-up"><em>This text is only visible above 480px</em></p>
 
@@ -115,23 +122,28 @@
 
 <p class="h-med-up"><em>This text is only visible above 800px</em></p>
 
-<p class="h-large-down">This text is hidden below 1280px</p>
+<p class="h-large-down">This text is hidden below 1260px</p>
 
-<p class="h-large-up"><em>This text is only visible above 1280px</em></p>
+<p class="h-large-up"><em>This text is only visible above 1260px</em></p>
 
+  </div>
 
-  <h2 class="sg-title">Headings</h2>
-  <h1>Heading Level 1 - Project Management</h1>
+  <div class="switch-trans">
+    <h2 class="sg-title">Headings</h2>
+    <h1>Heading Level 1 - Project Management</h1>
 <h1><a href="">Heading Level 1 - Project Management Link</a></h1>
 <h2>Heading Level 2 - Gaucho</h2>
 <h2><a href="">Heading Level 2 - Gaucho Link</a></h2>
 <h3>Heading Level 3</h3>
 <h3><a href="">Heading Level 3 - Gaucho Link</a></h3>
+  </div>
 
   <h2 class="sg-title">Paragraph</h2>
   <p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
   <h2 class="sg-title">Inline Elements</h2>
   <p><a href="#">This is a text link yup yup</a></p>
+
+<p><a href="#">hello@ctclondon.co.uk</a></p>
 
 <p><strong>Strong is used to indicate strong importance</strong></p>
 
@@ -177,7 +189,91 @@
 <div class="f-black  l-margin-top">
   <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <use xlink:href="#logo"></use>
-</svg></div>
+</svg></div>  
+  <h1 class="sg-heading">Forms</h1>
+  <h2 class="sg-title">Text fields</h2>
+  <fieldset>
+    <div class="field">
+        <label for="text">Text Input <abbr title="Required">*</abbr></label>
+        <input id="text" type="text" placeholder="Text Input">
+    </div>
+    <div class="field">
+        <label for="emailaddress">Email Address</label>
+        <input id="emailaddress" type="email" placeholder="name@email.com">
+    </div>
+    <div class="field">
+        <label for="tel">Number Input <abbr title="Required">*</abbr></label>
+        <input id="tel" type="tel" placeholder="Enter a Tel" pattern="[0-9]*">
+    </div>
+    <div class="field">
+        <label for="textarea">Textarea</label>
+        <textarea id="textarea" rows="8" cols="48" placeholder="Type message here"></textarea>
+    </div>
+    <div class="field">
+        <label class="error">Error Input</label>
+        <input class="is-error" type="text" placeholder="Text Input">
+    </div>
+    <div class="field">
+        <label class="valid">Valid</label>
+        <input class="is-valid" type="text" placeholder="Text Input">
+    </div>
+    <div class="field">
+        <input class="btn" id="submit" type="submit" placeholder="Text Input">
+    </div>
+    
+
+</fieldset>
+
+
+  <h2 class="sg-title">Select Menu</h2>
+  <fieldset>
+  <div class="field-container">
+    <label for="select">Select</label>
+    <select id="select">
+      <optgroup label="Option Group">
+        <option>Option One</option>
+        <option>Option Two</option>
+        <option>Option Three</option>
+      </optgroup>
+    </select>
+  </div>
+</fieldset>
+  <h2 class="sg-title">Checkbox</h2>
+  <form action="#">
+  <fieldset class="options">
+    <legend>Checkbox <abbr title="Required">*</abbr></legend>
+    <div class="field">
+      <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+      <label for="checkbox1">Choice A</label>
+    </div>
+    <div class="field">
+      <input id="checkbox2" name="checkbox" type="checkbox">
+      <label for="checkbox2">Choice B</label>
+    </div>
+    <div class="field">
+      <input id="checkbox3" name="checkbox" type="checkbox">
+      <label for="checkbox3">Choice C</label>
+    </div>
+  </fieldset>
+</form>
+  <h2 class="sg-title">Radio Buttons</h2>
+  <form action="#">
+  <fieldset class="options">
+    <legend>Radio</legend>
+    <div class="field">
+      <input id="radio1" name="radio" type="radio" class="radio">
+      <label for="radio1">Option 1</label>
+    </div>
+    <div class="field">
+      <input id="radio2" name="radio" type="radio" class="radio">
+      <label for="radio2">Option 2</label>
+    </div>
+    <div class="field">
+      <input id="radio3" name="radio" type="radio" class="radio">
+      <label for="radio3"> Option 3</label>
+    </div>
+  </fieldset>
+</form>
 </div>
 
 

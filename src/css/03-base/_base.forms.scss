@@ -1,0 +1,150 @@
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+
+@include placeholder {
+  color: col("grey--light");
+}
+
+form {
+  position: relative;
+  margin:0 auto;
+}
+
+legend {
+
+}
+
+.field {
+  margin-top: $base-spacing-unit;
+  & + & {
+    margin-top: rem(60);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  font-family: $headings-font;
+  @extend .t-lede;
+  background: transparent;
+  border: 0;
+  border-bottom: rem(1) solid black;
+  border-radius: 0;
+  color: col("blue");
+  max-width: rem(680);
+  width: 100%;
+  padding: 0;
+  margin-top: rem(20);
+  transition: .2s ease;
+  -webkit-appearance: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  &:focus {
+    outline: none;
+    // background-color: col("white");
+    // border: rem(1) solid col("white");
+    // color: col("black");
+    // outline: none;
+    // @include placeholder {
+    //   color: col("black");
+    // }
+  }
+
+  &.is-valid {
+    border-bottom: rem(2) solid green;
+  }
+
+  &.is-error {
+    border-bottom: rem(2) solid red;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+}
+
+input[type="submit"] {
+  @extend .t-alpha;
+}
+
+textarea {
+  border: rem(1) solid black;
+  padding: $base-spacing-unit--small;
+  height: rem(200);
+}
+
+label {
+  display: block;
+  @extend .t-beta;
+}
+
+/*  #Radio and Checkbox Inputs
+--------------------------------------*/
+
+input[type="radio"], 
+input[type="checkbox"] {
+  display: block;
+  position:absolute;
+  opacity: 0;
+  & + label {
+    position: relative;
+    display: inline-block;
+    padding: rem(5) 0 0 rem(50);
+    cursor: pointer;
+    color: col("grey");
+    text-transform: none;
+    font-weight: normal;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(rem(30));
+    }
+    &:before {
+      transition: .2s ease;
+      transform: scale(0);
+    }
+    &:after {
+      background: transparent;
+      border: rem(1) solid col("blue");
+    }
+  }
+  &:checked + label:before {
+    transform: scale(1);
+  }
+  &:disabled + label {
+    opacity: .5;
+  }
+}
+
+input[type="radio"] {
+  & + label:before {
+    border-radius: 50%;
+    border: rem(10) solid col("white");
+    background: col('blue');
+  }
+  & + label:after {
+    border-radius: 50%;
+    border-width: rem(2);
+  }
+}
+
+input[type="checkbox"] {
+  & + label:before {
+    // border-radius: 50%;
+    border: rem(10) solid col("white");
+    background: col('blue');
+  }
+  & + label:after {
+    // border-radius: 50%;
+    border-width: rem(2);
+  }
+}

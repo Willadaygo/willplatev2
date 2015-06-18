@@ -8,21 +8,31 @@
 
 {% block content %}
 
-<div class="styleguide wrapper switch-trans">
-  <h1 class="sg-heading">Cotton Thompson Cole</h1>
-  <h2 class="sg-subheading">Style Guide</h2>
-  
-  <h2 class="sg-title">Colors</h2>
-  {% include "patterns/00-atoms/01-global/00-colors.twig" %}
-  
-  <h2 class="sg-title">Fonts</h2>
-  {% include "patterns/00-atoms/01-global/01-fonts.twig" %}
+<div class="styleguide  wrapper">
+  <div class="switch-trans">
+    <h1 class="sg-heading">Cotton Thompson Cole</h1>
+    <h2 class="sg-subheading">Style Guide</h2>
+  </div>
 
-  <h2 class="sg-title">Visibility</h2>
-  {% include "patterns/00-atoms/01-global/02-visibility.twig" %}
+  <div class="switch-trans">
+    <h2 class="sg-title">Colors</h2>
+    {% include "patterns/00-atoms/01-global/00-colors.twig" %}
+  </div>
+  
+  <div class="switch-trans">
+    <h2 class="sg-title">Fonts</h2>
+    {% include "patterns/00-atoms/01-global/01-fonts.twig" %}
+  </div>
 
-  <h2 class="sg-title">Headings</h2>
-  {% include "patterns/00-atoms/02-text/00-headings.twig" %}
+  <div class="switch-trans">  
+    <h2 class="sg-title">Visibility</h2>
+    {% include "patterns/00-atoms/01-global/02-visibility.twig" %}
+  </div>
+
+  <div class="switch-trans">
+    <h2 class="sg-title">Headings</h2>
+    {% include "patterns/00-atoms/02-text/00-headings.twig" %}
+  </div>
 
   <h2 class="sg-title">Paragraph</h2>
   {% include "patterns/00-atoms/02-text/01-paragraph.twig" %}
@@ -38,7 +48,30 @@
 
   <h2 class="sg-title">Logo</h2>
   {% include "patterns/00-atoms/04-images/00-logo.twig" %}
+  
+  <h1 class="sg-heading">Forms</h1>
+  <h2 class="sg-title">Text fields</h2>
+  {% include "patterns/00-atoms/05-forms/00-text-fields.twig" %}
+
+  <h2 class="sg-title">Select Menu</h2>
+  {% include "patterns/00-atoms/05-forms/01-select-menu.twig" %}
+
+  <h2 class="sg-title">Checkbox</h2>
+  {% include "patterns/00-atoms/05-forms/02-checkbox.twig" %}
+
+  <h2 class="sg-title">Radio Buttons</h2>
+  {% include "patterns/00-atoms/05-forms/03-radio-buttons.twig" %}
 
 </div>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+

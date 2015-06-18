@@ -4,7 +4,7 @@
 
 //Combine the layout items with the widths found in `trumps.widths`.
 
-$gutter: rem(10);
+$gutter: rem(20);
 
 .grid {
   list-style: none;
@@ -20,11 +20,11 @@ $gutter: rem(10);
   // }
 
   @include break($small-break) {
-    &:first-child {
-      [class*="col--"] {
-        margin-top:0;
-      }
-    }
+    // &:first-child {
+    //   [class*="col--"] {
+    //     margin-top:0;
+    //   }
+    // }
     margin-top: 0;
     &.grid--noMargins {
       margin: $gutter 0 0 0;
@@ -41,7 +41,6 @@ $gutter: rem(10);
   font-size: medium; //IE
   font-size: initial;
   text-align: left;
-  // min-height: $gutter;
   img {
     width: 100%;
   }
@@ -68,7 +67,8 @@ $gutter: rem(10);
   .col--fix#{$i} {
     @include break($small-break) {
       // width: #{((rem(1610)/12)*$i)};
-      width: #{((rem(1210)/12)*$i)};
+      width: #{((rem(1200)/12)*$i)};
+      // width: calc( #{((1260px/12)*$i)} - #{$gutter} );
     }
   }
 }

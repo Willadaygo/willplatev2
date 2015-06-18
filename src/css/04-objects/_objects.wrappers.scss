@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .wrapper {
-  max-width: em(1280);
+  max-width: $large-break;
   margin: 0 auto;
   padding-right: $base-spacing-unit;
   padding-left:  $base-spacing-unit;
