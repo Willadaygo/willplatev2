@@ -30,15 +30,14 @@
   border-radius: 0;
   font-size: rem(44);
   line-height: rem(56);
-
-  &,
+  text-decoration: none;
+  color: col("white");
+  transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none; /* [4] */
-    color: col("white");
+    // background-color: col("blue");
   }
-
 }
 
 /**
@@ -50,40 +49,27 @@
   padding: 0;
 }
 
-.perspective {
-  display: inline-block;
-  position: relative;
-  // margin: 0;
-  // padding: 1em;
-  z-index: 1;
-  perspective: 800px;
-}
-
-.btn--3d {
-  position: relative;
-  outline: rem(1) solid transparent;
-  transition: $base-transition;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  transform-style: preserve-3d;
+.btn--in {
+  background: col("black");
+  transform: translateZ(0);
+  backface-visibility: hidden;
   &::before {
-    content: 'Do it!';
-    width: 100%;
-    height: 100%;
+    content: "";
     position: absolute;
-    top: 100%;
-    right: 0;
+    z-index: -1;
+    top: 0;
     bottom: 0;
     left: 0;
-    // speak: none;
-    z-index: -1;
-    
+    right: 0;
+    transform-origin: 50%;
     background: col("blue");
-    transform-origin: 0% 0%;
-    transform: rotateX(-90deg);
+    transform: scaleY(0);
+    transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  &:hover {
-    transform-origin: 50% 0%;
-    transform: rotateX(90deg) translateY(-100%);
+  &:hover::before {
+    transform: scaleY(1);
   }
 }
+
+
 

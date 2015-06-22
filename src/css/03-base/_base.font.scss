@@ -2,12 +2,13 @@
     #PAGE
 \*------------------------------------*/
 
-// @include font-face(Mercury-Text-G3-Roman, "../fonts/Mercury-Text-G3-Roman");
+@include font-face(Mercury-Text-G3-Roman, "../fonts/Mercury-Text-G3-Roman");
 @include font-face(FaktPro-Blond, "../fonts/FaktPro-Blond");
 @include font-face(FaktPro-Medium, "../fonts/FaktPro-Medium");
 
 
-$headings-font:  "Imperial", sans-serif;
+// $headings-font:  "Imperial", sans-serif;
+$headings-font:  "Mercury-Text-G3-Roman", sans-serif;
 $body-font:      "FaktPro-Blond", "aktiv-grotesk-std", sans-serif;
 $body-font-bold: "FaktPro-Medium", "aktiv-grotesk-std", sans-serif;
 

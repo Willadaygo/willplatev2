@@ -1,0 +1,65 @@
+/*------------------------------------*\
+  #HAMBURGER
+\*------------------------------------*/
+
+// Burger parts
+//
+// (---) top    -> &:before
+// [---] middle -> &
+// (---) bottom -> &:after
+
+// Burger
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000) {
+  $burger-height: $height !global;
+  $burger-gutter: $gutter !global;
+
+  position: relative;
+  margin-top: $height + $gutter;
+  margin-bottom: $height + $gutter;
+  user-select: none;
+
+  &, &:before, &:after {
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $color;
+    // transition-property: background-color, transform;
+    // transition-duration: $transition-duration;
+    transition: transform $base-transition, top $base-transition $base-transition-speed, background-color $base-transition $base-transition-speed;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    content: "";
+  }
+
+  &:before {
+    top: -($height + $gutter);
+  }
+
+  &:after {
+    top: $height + $gutter;
+  }
+}
+
+// Burger animations
+@mixin burger-to-cross {
+  & {
+    background-color: transparent;
+  }
+  &:before, &:after {
+    top: 0;
+    transition: top $base-transition, transform $base-transition $base-transition-speed, background-color $base-transition;
+  }
+  &:before {
+    transform: translateY(0) rotate(45deg);
+  }
+  &:after {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+
+
+
+

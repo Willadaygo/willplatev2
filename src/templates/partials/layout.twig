@@ -11,16 +11,16 @@
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
 	<script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=681(font-family=Imperial)&sid=683(font-family=Imperial+Bold)&key=3riQct4C4d',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
+    // (function() {
+    //     var path = '//easy.myfonts.net/v2/js?sid=681(font-family=Imperial)&sid=683(font-family=Imperial+Bold)&key=3riQct4C4d',
+    //         protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+    //         trial = document.createElement('script');
+    //     trial.type = 'text/javascript';
+    //     trial.async = true;
+    //     trial.src = protocol + path;
+    //     var head = document.getElementsByTagName("head")[0];
+    //     head.appendChild(trial);
+    // })();
   </script>
 
 	<link rel="stylesheet" href="/css/styles.css">
@@ -34,43 +34,54 @@
 	{% include "symbols.twig" %}
 	{% set svg = "svg.twig" %}
 
-  <div class="site">
+  {# <div class="site"> #}
+  <div class="site ocn-show-right">
 
-    <a href="/" class="ocn-switch"></a>
-    
-    <div class="ocn">
+    <a href="#" class="ocn-menu-button" role="navigation">
+      <span class="burger-icon"></span>
+    </a>
+
+    <header class="header">
+
+      <a href="/" class="logo f-black">
+        {% include svg with {'class': 's-logo', 'symbol': '#logo'} %}
+      </a>
+
+      <div class="ocn">
       
-      <ul class="ocn__list">
-        <li class="ocn__list__item">
-          <a href="/">Home</a>
-          {# <ul class="ocn__sub">
-            <li><a href="">Sub Nav 1</a></li>
-          </ul> #}
-        </li>
-        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
-          <a href="/about/">About</a>
-        </li>
-        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
-          <a href="/contact/">Contact</a>
-        </li>
-        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
-          <a href="">Nav 4</a>
-        </li>
-      </ul>
+        <ul class="ocn__list">
+          <li class="ocn__list__item">
+            <a href="/">Home</a>
+          </li>
+          <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+            <a href="/about/">About</a>
+          </li>
+          <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+            <a class="js-ocn__sub-toggle" href="/services/">Services</a>
+            <ul class="ocn__sub">
+              <li class="ocn__sub__item"><a href="">< Services</a></li>
+              <li class="ocn__sub__item"><a href="">Sub Nav 1</a></li>
+              <li class="ocn__sub__item"><a href="">Sub Nav 2</a></li>
+              <li class="ocn__sub__item"><a href="">Sub Nav 3</a></li>
+              <li class="ocn__sub__item"><a href="">Sub Nav 4</a></li>
+            </ul>
+          </li>
+          <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+            <a href="/contact/">Contact</a>
+          </li>
+        </ul>
 
-    </div>
+      </div>
 
-    
-    
+    </header>
+
     <!-- the viewport area contains MAIN WEBSITE CONTENT -->
     <div class="site__inner"> <!-- important for mob menu push -->
 
-      <div class="switch-container">
-        <div class="switch">
+      <div class="switch">
 
-          {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-        </div>
       </div>
       
     </div>

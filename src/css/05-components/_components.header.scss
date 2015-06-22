@@ -2,54 +2,112 @@
   #HEADER
 \*------------------------------------*/
 
-
 // Define our variables
+$right-width:   100%;
+$overlap-ratio: 2;
+$header-height: rem(80);
 
-$right-width:   100% !default;
-$overlap-ratio: 2 !default;
-$speed: .2s;
-
-// Menu Button
-
-.ocn-switch {
-  display: none; //turned block with js kicks in to stop menu flash on load
-  // display: block;
+.header {
   position: fixed;
   top: 0;
-  right: 0;
-  @include size(rem(80));
-  background: $base-brand-color;
-  z-index: 100;
-  // transform: translate3d(-100%,0,0);
-  transition: .2s ease;
-  // will-change: transform;
-  .ocn-show-right & {
-    background: $base-text-color;
-    // transform: translate3d(-$right-width,0,0);
+  z-index: 10;
+  width: 100%;
+  height: $header-height;
+  background: col("white");
+  padding: rem(18) rem(20) rem(20);
+  border-bottom: rem(2) solid col("black");
+
+  @include break($med-break) {
+    height: $header-height*2;
+    padding: rem(40);
   }
+
+}
+
+.logo {
+  display: inline-block;
 }
 
 
-//Nav List
+
+
+
+/*  #Hambuger Button
+--------------------------------------*/
+
+.ocn-menu-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: rem(45) rem(20) rem(14) rem(20);
+  z-index: 20;
+  @include break($med-break) {
+    display: none;
+  }
+}
+
+.burger-icon {
+  @include burger(rem(20), rem(3), rem(5), col("black"));
+}
+
+.ocn-menu-button.is-active .burger-icon {
+  @include burger-to-cross;
+}
+
+
+
+
+
+/*  #Off Canvas Navigation
+--------------------------------------*/
 
 .ocn {
-  background: $base-brand-color;
+  display:none;
+  position: fixed;
+  top: $header-height;
+  bottom: 0;
+  left: auto;
+  right:0;
+  overflow: auto;
+  z-index: 10;
+  background: col('white');
+  width:$right-width;
+  transform: translate3d(100%,0,0);
+
   @include break($med-break) {
     background: none;
   }
+
   ul {
     margin:0;
-    padding:0;
     list-style:none;
     font-size: 0;
   }
+
   li {
-    font-size: medium;
-    font-size: initial;
+    font-family: $body-font-bold;
+    font-weight: normal;
+    font-size: rem(24);
+    line-height: rem(28);
+    letter-spacing: -0.01em;
+
+    @include break($med-break) {
+      font-size: rem(17);
+      line-height: rem(25);
+    }
+
+  }
+  
+  &.is--visible {
+    display: block;
   }
 }
 
 .ocn__list { //ul
+  padding: 0 $base-spacing-unit;
+  // transition: $base-transition;
+  // transform: translate3d(0,0,0);
+  
   // @include break($med-break) {
   //   text-align: center;
   //   margin: 0 auto;
@@ -58,9 +116,9 @@ $speed: .2s;
 
 .ocn__list__item { //li
   transition: $base-transition;
+  border-bottom: rem(2) solid col("grey--light");
   @include break($med-break) {
     display: inline-block;
-    padding: 0 $base-spacing-unit;
     border-bottom: rem(1) solid col("black");
     &.is--active {
       border-bottom: rem(4) solid col("blue");
@@ -71,7 +129,7 @@ $speed: .2s;
 .ocn__list a {
   display: block;
   width: 100%;
-  padding: $base-spacing-unit;
+  padding: rem(22) 0 rem(18) 0;
   // @include break($med-break) {
   //   border: 0;
   //   padding: 0;
@@ -79,138 +137,49 @@ $speed: .2s;
   // }
 }
 
-// .ocn__sub {
-//   z-index: -1;
-//   height: 0;
-//   transition: all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
-//   position: relative;
-//   background: col("green--darker");
-//   overflow: hidden;
-//   @include break($med-break) {
-//     display: none;
-//     width: 0;
-//     height: 0;
-//   }
-// }
+.site__inner {
+  transform: translate3d(0,0,0);
+}
 
-// .ocn__sub--toggle {
-//   width: 100%;
-//   height: rem(70);
-//   position: absolute;
-//   top:0;
-//   opacity: 1;
-//   cursor: pointer;
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     top: rem(30);
-//     left: rem(120);
-//     @include size(rem(10), rem(8));
-//     background: blue;
-//     transform: translateZ(0);
-//     transform: rotate(0deg);
-//     transition: all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000);
-//   }
-//   &.is--rotated:after {
-//     transform: rotate(180deg);
-//   }
-// }
+.site__inner,
+.ocn {
+  transition: $base-transition-speed*2 $base-transition-ease;
+}
 
-// .ocn__sub li {
-//   white-space: nowrap;
-//   opacity: 0;
-//   transform: translateZ(0);
-//   transform: translateX(rem(-20));
-//   // visibility: hidden;
-// }
-
-// .ocn__sub.is--visible {
-//   z-index: 0;
-//   height: rem(70)*8;
-//   overflow: visible;
-//   li {
-//     opacity: 1; 
-//     transform: translateX(0);
-//     // visibility: visible;
-//     transition: all .5s cubic-bezier(0.190, 1.000, 0.220, 1.000);
-//   }
-//   &:after {
-//     transform: rotate(180deg);
-//   }
-// }
-
-// .ocn__sub a {
-//   font-size: rem(10);
-//   line-height: rem(16);
-//   letter-spacing: .2em;
-//   padding-left: rem(60);
-// }
-
+  
 @include break-max($med-break) {
 
-  .ocn-switch {
-    display: block;
-  }
+  .ocn-show-right {
 
-  .ocn {
-    display:none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: auto;
-    right: auto;
-    overflow: auto;
-    // overflow-x:hidden;
-    // overflow-y: auto;
-  }
-
-  .site__inner,
-  .ocn {
-    transition: $base-transition;
-  }
-
-  .ocn {
-    transform: translate3d(0,0,0);
-    transform: translateZ(0);
-    z-index: 1;
-  }
-    
-  @if $right-width != 0px {
-    .site__inner{
-      opacity: 1;
+    .site__inner {
+      transform: translate3d(-#{$right-width / $overlap-ratio},0,0);
     }
+
     .ocn {
-      right:0;
-      width:$right-width;
-      transform: translate3d(100%,0,0);
-    }
-    .ocn__list {
-      transition: $base-transition;
       transform: translate3d(0,0,0);
     }
-  }
 
-  @if $right-width != 0px {
-    .ocn-show-right {
+    // .ocn__list {
+    //   transform: translate3d(0,0,0);
+    // }
 
-      .site__inner {
-        transform: translate3d(-#{$right-width / $overlap-ratio},0,0);
-      }
-
-      .ocn {
-        transform: translate3d(0,0,0);
-      }
-
-      .ocn__list {
-        transform: translate3d(0,0,0);
-      }
-    }
-  }
-
-  // State for showing Nav after page has loaded
-  .is--visible {
-    display: block;
   }
 
 }
 
+.ocn__sub {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right:0;
+  overflow: auto;
+  z-index: 10;
+  background: col('white');
+  width:$right-width;
+  transform: translate3d(100%,0,0);
+  transition: $base-transition-speed*2 $base-transition-ease;
+  &.is-open {
+    transform: translate3d(0,0,0);
+  }
+}

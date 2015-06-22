@@ -4,6 +4,7 @@
 
 .switch-trans {
   transition: $base-transition;
+  transition-property: opacity, transform;
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) { 
      transition-delay: 065ms * $i; 

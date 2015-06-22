@@ -4,7 +4,9 @@
 
 $padding: rem(20);
 
-$base-transition: 165ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$base-transition: 165ms cubic-bezier(0.86, 0, 0.07, 1);
+$base-transition-speed: 165ms;
+$base-transition-ease: cubic-bezier(0.86, 0, 0.07, 1);
 
 
 // High-level base settings.

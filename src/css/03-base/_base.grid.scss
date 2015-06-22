@@ -150,4 +150,16 @@ $gutter: rem(20);
 
 }
 
+.grid-wrapper {
+  @include break($small-pad-break) {
+    width: rem(380);
+  }
+  @include break($med-pad-break) {
+    width: rem(780);
+  }
+  @include break($large-break) {
+    width: 100%;
+  }
+}
+
 

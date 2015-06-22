@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 var dev = 'src/',
 	prod = 'public/',
 	paths = {
+		styleGuidePages: dev + 'styleguide/**/*.twig',
 		pages: dev + 'templates/**/*.twig',
 		img: dev + 'img/**/*',
 		css: dev +'css/*.styl',
@@ -38,6 +39,21 @@ gulp.task('templates', function () {
 			path.extname = '.html';
 		}))
 		.pipe(gulp.dest(prod));
+});
+
+//	Style Guide
+// --------------------
+
+gulp.task('styleguide', function () {
+	return gulp.src(paths.styleGuidePages)
+		.pipe($.twig())
+		.on("error", $.notify.onError(function (error) {
+			return "Template Error: " + error.message;
+		}))
+		.pipe($.rename(function (path) {
+			path.extname = '.html';
+		}))
+		.pipe(gulp.dest(prod + 'styleguide'));
 });
 
 
@@ -159,9 +175,14 @@ gulp.task('watch', function() {
 		dev + 'templates/**/*'], 
 		['templates']
 	).on('error', errorHandler);
+	gulp.watch([
+		paths.styleGuidePages, 
+		dev + 'styleguide/**/*'], 
+		['styleguide']
+	).on('error', errorHandler);
 });
 
-gulp.task('default', ['sprites', 'templates', 'fonts', 'styles', 'vendors', 'scripts', 'server', 'watch']);
+gulp.task('default', ['templates', 'styleguide', 'styles', 'scripts', 'server', 'watch']); // 'sprites', 'fonts', 'vendors',
 
 // Handle the error
 function errorHandler (error) {

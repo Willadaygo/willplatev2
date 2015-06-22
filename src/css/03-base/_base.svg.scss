@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #SVGs
+\*------------------------------------*/
+
+.s-logo {
+  display: inline-block;
+  width: rem(90);
+  height: rem(53);
+
+  @include break($med-break) {
+    width: rem(180);
+    height: rem(105);
+  }
+  
+}

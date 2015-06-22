@@ -20,6 +20,10 @@
   text-align: center;
 }
 
+.t-align-right {
+  text-align: right;
+}
+
 .l-center {
   margin-left: auto;
   margin-right: auto;
@@ -40,6 +44,10 @@
   }
 }
 
+.l-right {
+  float: right;
+}
+
 .l-padding {
   padding: $base-spacing-unit;
 }
@@ -50,5 +58,11 @@
 
 .l-margin-top--none {
   margin-top: 0 !important;
+}
+
+.t-hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 

@@ -14,12 +14,23 @@ html {
   -moz-osx-font-smoothing: grayscale; 
    -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+
   @include break($xlarge-break) {
     font-size: 125%;
   }
+  
 }
 
 body {
   font-family: $body-font;
   font-weight: 400;
+}
+
+.site__inner {
+  padding-top: rem(80);
+
+  @include break($med-break) {
+    padding-top: rem(160);
+  }
+
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-gb"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>{% block title %}{% endblock %}CTC - Cotton Thompson Cole</title>
+	<meta name="description" content="{% block meta_description %}{% endblock %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+
+	<script type="text/javascript">
+    // (function() {
+    //     var path = '//easy.myfonts.net/v2/js?sid=681(font-family=Imperial)&sid=683(font-family=Imperial+Bold)&key=3riQct4C4d',
+    //         protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+    //         trial = document.createElement('script');
+    //     trial.type = 'text/javascript';
+    //     trial.async = true;
+    //     trial.src = protocol + path;
+    //     var head = document.getElementsByTagName("head")[0];
+    //     head.appendChild(trial);
+    // })();
+  </script>
+
+	<link rel="stylesheet" href="/css/styles.css">
+	<!--[if lt IE 9]> 
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="/js/fallback.js"></script>
+	<![endif]-->
+
+</head>
+<body class="page--{{ page }}">
+	{% include "symbols.twig" %}
+	{% set svg = "svg.twig" %}
+
+  <div class="site">
+
+   {#  <a href="/" class="ocn-switch"></a>
+    
+    <div class="ocn">
+      
+      <ul class="ocn__list">
+        <li class="ocn__list__item">
+          <a href="/">Home</a>
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="/about/">About</a>
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="/contact/">Contact</a>
+        </li>
+        <li class="ocn__list__item{% if page == "___"%} is--active{% endif %}">
+          <a href="">Nav 4</a>
+        </li>
+      </ul>
+
+    </div> #}
+
+    
+    
+    <!-- the viewport area contains MAIN WEBSITE CONTENT -->
+    <div class="site__inner"> <!-- important for mob menu push -->
+
+      <div class="switch-container">
+        <div class="switch">
+
+          {% block content %}{% endblock %}
+
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+	
+	<script src='/js/vendors.js'></script>
+	<script src="/js/scripts.js"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	
+</body>
+</html>
